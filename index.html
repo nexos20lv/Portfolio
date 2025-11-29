@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/png">
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/background.css" />
+    <link rel="stylesheet" href="./assets/css/animations.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+    <link rel="stylesheet" href="./assets/css/modals.css" />
+    <link rel="stylesheet" href="./assets/css/loader.css" />
+    <title>Pierre Bouteman | Portfolio</title>
+</head>
+
+<body>
+    <div class="loader"></div>
+    <div class="background">
+        <div class="crossPatternCtn">
+            <img src="./assets/img/background/crossPattern.png" alt="" />
+        </div>
+        <div class="grain" width="100%" height="100%"></div>
+        <div class="headerBlobsCtn">
+            <div class="blobCtn" id="headerBlobCtn">
+                <img class="blob" id="headerBlob" src="./assets/img/background/blobs/header.png" />
+            </div>
+            <div class="blobCtn" id="underHeaderBlobCtn">
+                <img class="blob" id="underHeaderBlob" src="./assets/img/background/blobs/underHeader.png" />
+            </div>
+        </div>
+        <div class="blobCtn" id="aboutBlobCtn">
+            <img class="blob" id="aboutBlob" src="./assets/img/background/blobs/about.png" />
+        </div>
+        <div class="blobCtn" id="skillsBlobCtn">
+            <img class="blob" id="skillsBlob" src="./assets/img/background/blobs/skills.png" />
+        </div>
+        <div class="blobCtn" id="projectsBlobCtn">
+            <img class="blob" id="projectsBlob" src="./assets/img/background/blobs/projects.png" />
+        </div>
+    </div>
+    <nav class="gradientBorder">
+        <ul class="navList">
+            <li><a href="#hero" class="link gradientText">Pierre</a></li>
+            <div class="burger-menu">
+                <span></span>
+            </div>
+            <li>
+                <ul class="navLinks">
+                    <li><a href="#about" class="link">A Propos</a></li>
+                    <li><a href="#skills" class="link">Compétences</a></li>
+                    <li><a href="#projects" class="link">Projets</a></li>
+                    <li><a href="#contact" class="link">Contact</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact" class="link">Me contacter</a></li>
+        </ul>
+    </nav>
+    <header id="hero">
+        <div class="mainTexts">
+            <h1 class="gradientText hero-animated">Salut, je suis Pierre</h1>
+            <h2 class="hero-animated hero-animated">Développeur Web & Passionné de Technologie</h2>
+        </div>
+        <a href="#about" class="ctaAbout hero-animated">
+            <p>En savoir plus sur moi</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-arrow-right-short"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+            </svg>
+        </a>
+    </header>
+    <section id="about">
+        <div class="aboutText gradientBorder animated">
+            <h2 class="sectionTitle gradientText animated">À Propos</h2>
+            <p class="animated">Passionné par le développement et les nouvelles technologies, je crée des solutions
+                innovantes et performantes. Mon approche combine créativité et rigueur technique pour répondre aux
+                besoins de mes projets.</p>
+            <p class="animated">Actuellement en Première STI2D au lycée Paul Duez, je vise une école d'ingénieur pour
+                approfondir mes compétences en développement logiciel et systèmes embarqués.</p>
+            <p class="animated">
+                <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="vertical-align: middle; margin-right: 8px;">
+                    <defs>
+                        <linearGradient id="pinGradient" x1="9" y1="0" x2="9" y2="23" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#e3d1f5" />
+                            <stop offset="1" stop-color="#a784cd" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                        d="M9 0C4.02944 0 0 4.02944 0 9C0 14.508 9 23 9 23C9 23 18 14.508 18 9C18 4.02944 13.9706 0 9 0ZM9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z"
+                        fill="url(#pinGradient)" />
+                </svg>
+                Basé à Cambrai, France
+            </p>
+        </div>
+        <div class="aboutImgWrapper gradientBorder animated">
+            <div class="aboutImg">
+                <img class="animated" src="./assets/img/mii.png" alt="Mon Mii" />
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <h2 class="sectionTitle gradientText animated">Compétences</h2>
+        <div class="infiniteCarousel animated">
+            <div class="carouselContainer">
+                <div class="carouselEl">
+                    <i class="fab fa-html5 gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">HTML</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-css3-alt gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">CSS</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-js gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">JS</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-github gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">GitHub</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-python gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">Python</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-java gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">Java</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-node-js gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">Node.js</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-git-alt gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">Git</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fas fa-pen-ruler gradientText" style="font-size: 24px;"></i>
+                    <p class="carouselLabel">UI/UX</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fas fa-database gradientText" style="font-size: 24px;"></i>
+                    <p class="carouselLabel">SQL</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fas fa-cubes gradientText" style="font-size: 24px;"></i>
+                    <p class="carouselLabel">Plugins MC</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fas fa-gamepad gradientText" style="font-size: 28px;"></i>
+                    <p class="carouselLabel">Game Dev</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fab fa-linux gradientText" style="font-size: 30px;"></i>
+                    <p class="carouselLabel">Linux</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fas fa-server gradientText" style="font-size: 28px;"></i>
+                    <p class="carouselLabel">Proxmox</p>
+                </div>
+                <div class="carouselEl">
+                    <i class="fas fa-dragon gradientText" style="font-size: 28px;"></i>
+                    <p class="carouselLabel">Pterodactyl</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2 class="sectionTitle gradientText animated">Projets</h2>
+        <div class="projectsCtn">
+            <div class="projectCard gradientBorder animated">
+                <div class="projectImgWrapper"
+                    style="height: 227.56px; overflow: hidden; border-radius: 10px; position: relative;">
+                    <iframe src="https://conferencesorientationpdz.eclozionmc.ovh/" scrolling="no"
+                        style="width: 400%; height: 400%; border: none; transform: scale(0.25); transform-origin: 0 0; pointer-events: none; user-select: none;"></iframe>
+                    <div style="position: absolute; inset: 0; z-index: 10;"></div>
+                </div>
+                <div class="projectInfos">
+                    <h3 class="projectTitle">Conférences Orientation Paul Duez</h3>
+                    <p class="projectDesc">Un site web complet pour gérer les inscriptions aux conférences
+                        d'orientation, faciliter le suivi des élèves et optimiser l'organisation de la semaine
+                        d'orientation.</p>
+                    <div class="projectButtons">
+                        <a href="https://conferencesorientationpdz.eclozionmc.ovh/" target="_blank"
+                            class="projectButton projectLiveDemo">Voir le site<i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="javascript:void(0)" data-show-modal="modal-project1"
+                            class="projectButton projectDetails">Détails<i class="fas fa-arrow-right"></i></a>
+                        <dialog id="modal-project1" class="gradientBorder">
+                            <h3>Conférences Orientation au Lycée Paul Duez</h3>
+                            <div class="projectImgWrapper"
+                                style="height: 227.56px; overflow: hidden; border-radius: 10px; position: relative; margin-bottom: 15px;">
+                                <iframe src="https://conferencesorientationpdz.eclozionmc.ovh/" scrolling="no"
+                                    style="width: 400%; height: 400%; border: none; transform: scale(0.25); transform-origin: 0 0; pointer-events: none; user-select: none;"></iframe>
+                                <div style="position: absolute; inset: 0; z-index: 10;"></div>
+                            </div>
+                            <p>J'ai créé un site web pour gérer les inscriptions à la semaine de l'orientation et
+                                faciliter le travail du professeur qui s'occupe de l'orientation et de l'organisation de
+                                cette semaine. Il permet aussi un suivi pour les professeurs principaux sur les élèves
+                                de leurs classes et de savoir à quelles conférences l'élève est
+                                allé.<br><br>Technologies utilisées : HTML, CSS, JavaScript, PHP</p>
+                            <button data-close="modal-project1"><i class="fas fa-xmark"></i></button>
+                        </dialog>
+                    </div>
+                </div>
+            </div>
+            <div class="projectCard gradientBorder animated">
+                <img src="./assets/img/projects/EclozionMC.png" alt="" class="projectImg">
+                <div class="projectInfos">
+                    <h3 class="projectTitle">Serveur Minecraft EclozionMC</h3>
+                    <p class="projectDesc">Un serveur Minecraft PvP Faction personnalisé avec des plugins custom et des
+                        événements communautaires.</p>
+                    <div class="projectButtons">
+                        <a href="https://eclozionmc.ovh/" target="_blank" class="projectButton projectLiveDemo">Voir le
+                            site<i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="javascript:void(0)" data-show-modal="modal-project2"
+                            class="projectButton projectDetails">Détails<i class="fas fa-arrow-right"></i></a>
+                        <dialog id="modal-project2" class="gradientBorder">
+                            <h3>Serveur Minecraft EclozionMC</h3>
+                            <img src="./assets/img/projects/EclozionMC.png" alt="">
+                            <p>Un serveur Minecraft PvP Faction personnalisé avec des plugins custom pour la gestion des
+                                factions, des quêtes et des événements communautaires. Le serveur dispose d'un site web
+                                dédié pour la présentation et la gestion de la communauté.</p>
+                            <button data-close="modal-project2"><i class="fas fa-xmark"></i></button>
+                        </dialog>
+                    </div>
+                </div>
+            </div>
+            <div class="projectCard gradientBorder animated">
+                <div class="projectImg"
+                    style="display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.5); font-style: italic;">
+                    Pas d'image pour le moment
+                </div>
+                <div class="projectInfos">
+                    <h3 class="projectTitle">La Guerre Des Capsules</h3>
+                    <p class="projectDesc">Mon premier jeu vidéo, un FPS multijoueur développé avec le moteur Godot et
+                        codé en GDScript avec des graphismes simples mais addictifs.</p>
+                    <div class="projectButtons">
+                        <a href="https://github.com/nexos20lv/La-Guerre-Des-Capsules" target="_blank"
+                            class="projectButton projectLiveDemo">Voir sur GitHub<i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="javascript:void(0)" data-show-modal="modal-project3"
+                            class="projectButton projectDetails">Détails<i class="fas fa-arrow-right"></i></a>
+                        <dialog id="modal-project3" class="gradientBorder">
+                            <h3>La Guerre Des Capsules</h3>
+                            <div class="projectImg"
+                                style="display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.5); font-style: italic; height: 220px; width: 100%; margin-bottom: 15px;">
+                                Pas d'image pour le moment
+                            </div>
+                            <p>Ce projet est le premier jeu vidéo que j'ai créé, c'est un jeu vidéo de type FPS jouable
+                                en multi avec des graphismes simples. Développé avec le moteur de jeu Godot et codé en
+                                GDScript, il m'a permis d'apprendre les bases du développement de jeux vidéo et de la
+                                programmation orientée objet.</p>
+                            <button data-close="modal-project3"><i class="fas fa-xmark"></i></button>
+                        </dialog>
+                    </div>
+                </div>
+            </div>
+            <div class="projectCard gradientBorder animated">
+                <div class="projectImgWrapper"
+                    style="height: 227.56px; overflow: hidden; border-radius: 10px; position: relative;">
+                    <iframe src="index.html" scrolling="no"
+                        style="width: 400%; height: 400%; border: none; transform: scale(0.25); transform-origin: 0 0; pointer-events: none; user-select: none;"></iframe>
+                    <div style="position: absolute; inset: 0; z-index: 10;"></div>
+                </div>
+                <div class="projectInfos">
+                    <h3 class="projectTitle">Portfolio</h3>
+                    <p class="projectDesc">Ce site même ! Une vitrine interactive et moderne développée sans framework.
+                    </p>
+                    <div class="projectButtons">
+                        <a href="https://github.com/nexos20lv/Portfolio" target="_blank"
+                            class="projectButton projectLiveDemo">Voir sur GitHub <i
+                                class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a href="javascript:void(0)" data-show-modal="modal-project4"
+                            class="projectButton projectDetails">Détails <i class="fas fa-arrow-right"></i></a>
+                        <dialog id="modal-project4" class="gradientBorder">
+                            <h3>Portfolio Personnel</h3>
+                            <div class="projectImgWrapper"
+                                style="height: 227.56px; overflow: hidden; border-radius: 10px; position: relative; margin-bottom: 15px;">
+                                <iframe src="index.html" scrolling="no"
+                                    style="width: 400%; height: 400%; border: none; transform: scale(0.25); transform-origin: 0 0; pointer-events: none; user-select: none;"></iframe>
+                                <div style="position: absolute; inset: 0; z-index: 10;"></div>
+                            </div>
+                            <p>Ce portfolio est une vitrine de mes compétences et projets. Il a été conçu pour être
+                                moderne, performant et entièrement responsive.<br><br>
+                                <strong>Fonctionnalités clés :</strong><br>
+                                - Thème violet "néon" avec glassmorphism.<br>
+                                - Intégration de l'API Lanyard pour le statut Discord en temps réel.<br>
+                                - Carrousel infini pour les compétences.<br>
+                                - Animations fluides et design unique.<br><br>
+                                Technologies utilisées : HTML5, CSS3, Vanilla JS.
+                            </p>
+                            <button data-close="modal-project4"><i class="fas fa-xmark"></i></button>
+                        </dialog>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="contact-link contact-github animated">
+            <a href="https://github.com/nexos20lv" target="_blank">
+                <svg class="logo github" width="30" height="30" viewBox="0 0 24 25" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 0.5C5.373 0.5 0 5.95713 0 12.6879C0 18.3989 3.872 23.1776 9.092 24.5C9.036 24.3355 9 24.1445 9 23.9079V21.8248C8.513 21.8248 7.697 21.8248 7.492 21.8248C6.671 21.8248 5.941 21.4662 5.587 20.8C5.194 20.0595 5.126 18.9271 4.152 18.2344C3.863 18.0039 4.083 17.7408 4.416 17.7763C5.031 17.9531 5.541 18.3817 6.021 19.0175C6.499 19.6543 6.724 19.7985 7.617 19.7985C8.05 19.7985 8.698 19.7731 9.308 19.6756C9.636 18.8296 10.203 18.0506 10.896 17.6829C6.9 17.2655 4.993 15.2463 4.993 12.5051C4.993 11.3249 5.488 10.1833 6.329 9.22146C6.053 8.26674 5.706 6.31972 6.435 5.57829C8.233 5.57829 9.32 6.76255 9.581 7.08248C10.477 6.77067 11.461 6.59395 12.495 6.59395C13.531 6.59395 14.519 6.77067 15.417 7.08451C15.675 6.76661 16.763 5.57829 18.565 5.57829C19.297 6.32074 18.946 8.27588 18.667 9.22857C19.503 10.1884 19.995 11.3269 19.995 12.5051C19.995 15.2443 18.091 17.2624 14.101 17.6819C15.199 18.2639 16 19.8991 16 21.1311V23.9079C16 24.0135 15.977 24.0897 15.965 24.1801C20.641 22.5154 24 18.0059 24 12.6879C24 5.95713 18.627 0.5 12 0.5Z"
+                        fill="url(#paint0_linear_140_275)" />
+                    <defs>
+                        <linearGradient id="paint0_linear_140_275" x1="12" y1="0.5" x2="12" y2="24.5"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#e3d1f5" />
+                            <stop offset="1" stop-color="#a784cd" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </a>
+        </div>
+        <div class="contact-main animated">
+            <h3>Envie de me contacter ?</h3>
+            <a class="contact-mail gradientText animated"
+                href="mailto:pierre.bouteman@icloud.com">pierre.bouteman@icloud.com</a>
+            <p>Conçu et développé par moi-même avec ❤️</p>
+        </div>
+        <div class="contact-lanyard" id="lanyard-card" style="display: none;">
+            <div class="lanyard-close-btn" id="lanyard-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="lanyard-header">
+                <div class="lanyard-user-info">
+                    <div class="lanyard-avatar-wrapper">
+                        <img id="lanyard-avatar" src="" alt="Avatar">
+                        <div class="lanyard-status-indicator" id="lanyard-status-indicator"></div>
+                    </div>
+                    <div class="lanyard-text-info">
+                        <p id="lanyard-username"></p>
+                        <p id="lanyard-status-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="lanyard-activity" id="lanyard-activity" style="display: none;">
+                <img id="lanyard-activity-img" src="" alt="Activity">
+                <div class="lanyard-activity-details">
+                    <p id="lanyard-activity-name"></p>
+                    <p id="lanyard-activity-state"></p>
+                    <p id="lanyard-activity-details-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="lanyard-toggle-btn" id="lanyard-toggle">
+            <i class="fab fa-discord"></i>
+        </div>
+    </footer>
+
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/burgerMenu.js"></script>
+    <script src="./assets/js/infiniteCarousel.js"></script>
+    <script src="./assets/js/modals.js"></script>
+    <script src="./assets/js/grainHeight.js"></script>
+    <script src="./assets/js/loader.js"></script>
+    <script src="./assets/js/hash-reset.js"></script>
+    <script src="./assets/js/lanyard.js"></script>
+    <script src="./assets/js/easterEggs.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
