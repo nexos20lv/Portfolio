@@ -45,28 +45,33 @@
     </div>
     <nav class="gradientBorder">
         <ul class="navList">
-            <li><a href="#hero" class="link gradientText">Pierre</a></li>
-            <div class="burger-menu">
-                <span></span>
-            </div>
-            <li>
-                <ul class="navLinks">
-                    <li><a href="#about" class="link">A Propos</a></li>
-                    <li><a href="#skills" class="link">Compétences</a></li>
-                    <li><a href="#projects" class="link">Projets</a></li>
-                    <li><a href="#contact" class="link">Contact</a></li>
-                </ul>
+            <li><a href="#hero" class="link gradientText" data-i18n="nav.brand">Pierre</a></li>
+            <li style="margin-left:auto;" class="nav-controls" aria-hidden="false">
+                <div class="lang-wrapper">
+                    <button id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false">🌐</button>
+                    <ul id="lang-menu" class="lang-menu" role="menu" aria-label="Langues">
+                        <li role="menuitem" data-lang="auto">🌐 AUTO</li>
+                        <li role="menuitem" data-lang="en">🇬🇧 EN</li>
+                        <li role="menuitem" data-lang="fr">🇫🇷 FR</li>
+                        <li role="menuitem" data-lang="es">🇪🇸 ES</li>
+                        <li role="menuitem" data-lang="de">🇩🇪 DE</li>
+                        <li role="menuitem" data-lang="it">🇮🇹 IT</li>
+                        <li role="menuitem" data-lang="pt">🇵🇹 PT</li>
+                        <li role="menuitem" data-lang="ru">🇷🇺 RU</li>
+                        <li role="menuitem" data-lang="zh-CN">🇨🇳 ZH</li>
+                        <li role="menuitem" data-lang="ar">🇸🇦 AR</li>
+                    </ul>
+                </div>
             </li>
-            <li><a href="#contact" class="link">Me contacter</a></li>
         </ul>
     </nav>
     <header id="hero">
         <div class="mainTexts">
-            <h1 class="gradientText hero-animated">Salut, je suis Pierre</h1>
-            <h2 class="hero-animated hero-animated">Développeur Web & Passionné de Technologie</h2>
+            <h1 class="gradientText hero-animated" data-i18n="hero.title">Salut, je suis Pierre</h1>
+            <h2 class="hero-animated hero-animated" data-i18n="hero.subtitle">Développeur Web & Passionné de Technologie</h2>
         </div>
         <a href="#about" class="ctaAbout hero-animated">
-            <p>En savoir plus sur moi</p>
+            <p data-i18n="hero.cta">En savoir plus sur moi</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-arrow-right-short"
                 viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -76,11 +81,11 @@
     </header>
     <section id="about">
         <div class="aboutText gradientBorder animated">
-            <h2 class="sectionTitle gradientText animated">À Propos</h2>
-            <p class="animated">Passionné par le développement et les nouvelles technologies, je crée des solutions
+            <h2 class="sectionTitle gradientText animated" data-i18n="about.title">À Propos</h2>
+            <p class="animated" data-i18n="about.p1">Passionné par le développement et les nouvelles technologies, je crée des solutions
                 innovantes et performantes. Mon approche combine créativité et rigueur technique pour répondre aux
                 besoins de mes projets.</p>
-            <p class="animated">Actuellement en Première STI2D au lycée Paul Duez, je vise une école d'ingénieur pour
+            <p class="animated" data-i18n="about.p2">Actuellement en Première STI2D au lycée Paul Duez, je vise une école d'ingénieur pour
                 approfondir mes compétences en développement logiciel et systèmes embarqués.</p>
             <p class="animated">
                 <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +100,7 @@
                         d="M9 0C4.02944 0 0 4.02944 0 9C0 14.508 9 23 9 23C9 23 18 14.508 18 9C18 4.02944 13.9706 0 9 0ZM9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z"
                         fill="url(#pinGradient)" />
                 </svg>
-                Basé à Cambrai, France
+                <span data-i18n="about.location">Basé à Cambrai, France</span>
             </p>
         </div>
         <div class="aboutImgWrapper gradientBorder animated">
@@ -105,7 +110,7 @@
         </div>
     </section>
     <section id="skills">
-        <h2 class="sectionTitle gradientText animated">Compétences</h2>
+        <h2 class="sectionTitle gradientText animated" data-i18n="skills.title">Compétences</h2>
         <div class="infiniteCarousel animated">
             <div class="carouselContainer">
                 <div class="carouselEl">
@@ -172,7 +177,7 @@
         </div>
     </section>
     <section id="projects">
-        <h2 class="sectionTitle gradientText animated">Projets</h2>
+        <h2 class="sectionTitle gradientText animated" data-i18n="projects.title">Projets</h2>
         <div class="projectsCtn">
             <div class="projectCard gradientBorder animated">
                 <div class="projectImgWrapper"
@@ -182,8 +187,8 @@
                     <div style="position: absolute; inset: 0; z-index: 10;"></div>
                 </div>
                 <div class="projectInfos">
-                    <h3 class="projectTitle">Conférences Orientation Paul Duez</h3>
-                    <p class="projectDesc">Un site web complet pour gérer les inscriptions aux conférences
+                    <h3 class="projectTitle" data-i18n="projects.project1.title">Conférences Orientation Paul Duez</h3>
+                    <p class="projectDesc" data-i18n="projects.project1.desc">Un site web complet pour gérer les inscriptions aux conférences
                         d'orientation, faciliter le suivi des élèves et optimiser l'organisation de la semaine
                         d'orientation.</p>
                     <div class="projectButtons">
@@ -213,8 +218,8 @@
             <div class="projectCard gradientBorder animated">
                 <img src="./assets/img/projects/EclozionMC.png" alt="" class="projectImg">
                 <div class="projectInfos">
-                    <h3 class="projectTitle">Serveur Minecraft EclozionMC</h3>
-                    <p class="projectDesc">Un serveur Minecraft PvP Faction personnalisé avec des plugins custom et des
+                    <h3 class="projectTitle" data-i18n="projects.project2.title">Serveur Minecraft EclozionMC</h3>
+                    <p class="projectDesc" data-i18n="projects.project2.desc">Un serveur Minecraft PvP Faction personnalisé avec des plugins custom et des
                         événements communautaires.</p>
                     <div class="projectButtons">
                         <a href="https://eclozionmc.ovh/" target="_blank" class="projectButton projectLiveDemo">Voir le
@@ -238,8 +243,8 @@
                     Pas d'image pour le moment
                 </div>
                 <div class="projectInfos">
-                    <h3 class="projectTitle">La Guerre Des Capsules</h3>
-                    <p class="projectDesc">Mon premier jeu vidéo, un FPS multijoueur développé avec le moteur Godot et
+                    <h3 class="projectTitle" data-i18n="projects.project3.title">La Guerre Des Capsules</h3>
+                    <p class="projectDesc" data-i18n="projects.project3.desc">Mon premier jeu vidéo, un FPS multijoueur développé avec le moteur Godot et
                         codé en GDScript avec des graphismes simples mais addictifs.</p>
                     <div class="projectButtons">
                         <a href="https://github.com/nexos20lv/La-Guerre-Des-Capsules" target="_blank"
@@ -270,8 +275,8 @@
                     <div style="position: absolute; inset: 0; z-index: 10;"></div>
                 </div>
                 <div class="projectInfos">
-                    <h3 class="projectTitle">Portfolio</h3>
-                    <p class="projectDesc">Ce site même ! Une vitrine interactive et moderne développée sans framework.
+                    <h3 class="projectTitle" data-i18n="projects.project4.title">Portfolio</h3>
+                    <p class="projectDesc" data-i18n="projects.project4.desc">Ce site même ! Une vitrine interactive et moderne développée sans framework.
                     </p>
                     <div class="projectButtons">
                         <a href="https://github.com/nexos20lv/Portfolio" target="_blank"
@@ -358,7 +363,6 @@
     </footer>
 
     <script src="./assets/js/animations.js"></script>
-    <script src="./assets/js/burgerMenu.js"></script>
     <script src="./assets/js/infiniteCarousel.js"></script>
     <script src="./assets/js/modals.js"></script>
     <script src="./assets/js/grainHeight.js"></script>
@@ -366,6 +370,7 @@
     <script src="./assets/js/hash-reset.js"></script>
     <script src="./assets/js/lanyard.js"></script>
     <script src="./assets/js/easterEggs.js"></script>
+    <script src="./assets/js/i18n.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {

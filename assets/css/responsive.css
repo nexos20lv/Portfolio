@@ -263,6 +263,17 @@
     }
 }
 
+/* Ensure the language control (last nav item) is visible on mobile breakpoints
+   Some earlier rules hide the last-child; override them here with higher specificity. */
+@media (max-width: 480px){
+    .navList>li:last-child{ display: list-item !important; visibility: visible !important; }
+}
+
+@media (min-width:481px) and (max-width:768px){
+    .navList>li:last-child{ display: list-item !important; visibility: visible !important; }
+}
+
+
 /* Small devices (landscape phones, 481px and up) */
 @media (min-width: 481px) and (max-width: 768px) {
 

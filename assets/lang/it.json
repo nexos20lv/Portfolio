@@ -1,0 +1,43 @@
+{
+  "nav":{
+    "brand":"Pierre",
+    "about":"Informazioni",
+    "skills":"Competenze",
+    "projects":"Progetti",
+    "contact":"Contatto",
+    "contact_btn":"Contattami"
+  },
+  "hero":{
+    "title":"Ciao, sono Pierre",
+    "subtitle":"Sviluppatore Web e Appassionato di Tecnologia",
+    "cta":"Scopri di più su di me"
+  },
+  "about":{
+    "title":"Informazioni",
+    "p1":"Appassionato di sviluppo e nuove tecnologie, creo soluzioni innovative e performanti. Il mio approccio combina creatività e rigore tecnico per soddisfare i bisogni dei progetti.",
+    "p2":"Attualmente studio STI2D al Lycée Paul Duez e punto a entrare in una scuola di ingegneria per approfondire lo sviluppo software e i sistemi embedded.",
+    "location":"Basato a Cambrai, Francia"
+  },
+  "skills":{
+    "title":"Competenze"
+  },
+  "projects":{
+    "title":"Progetti",
+    "project1":{
+      "title":"Conferenze di Orientamento — Paul Duez",
+      "desc":"Un sito completo per gestire le iscrizioni alle conferenze di orientamento, facilitare il monitoraggio degli studenti e ottimizzare l'organizzazione."
+    },
+    "project2":{
+      "title":"EclozionMC — Server Minecraft",
+      "desc":"Un server Minecraft PvP Faction personalizzato con plugin e eventi comunitari."
+    },
+    "project3":{
+      "title":"La Guerre Des Capsules",
+      "desc":"Il mio primo videogioco — un FPS multiplayer sviluppato con Godot." 
+    },
+    "project4":{
+      "title":"Portfolio",
+      "desc":"Questo sito — un portfolio interattivo e moderno costruito senza framework."
+    }
+  }
+}

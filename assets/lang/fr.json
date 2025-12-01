@@ -1,0 +1,43 @@
+{
+  "nav":{
+    "brand":"Pierre",
+    "about":"À Propos",
+    "skills":"Compétences",
+    "projects":"Projets",
+    "contact":"Contact",
+    "contact_btn":"Me contacter"
+  },
+  "hero":{
+    "title":"Salut, je suis Pierre",
+    "subtitle":"Développeur Web & Passionné de Technologie",
+    "cta":"En savoir plus sur moi"
+  },
+  "about":{
+    "title":"À Propos",
+    "p1":"Passionné par le développement et les nouvelles technologies, je crée des solutions innovantes et performantes. Mon approche combine créativité et rigueur technique pour répondre aux besoins de mes projets.",
+    "p2":"Actuellement en Première STI2D au lycée Paul Duez, je vise une école d'ingénieur pour approfondir mes compétences en développement logiciel et systèmes embarqués.",
+    "location":"Basé à Cambrai, France"
+  },
+  "skills":{
+    "title":"Compétences"
+  },
+  "projects":{
+    "title":"Projets",
+    "project1":{
+      "title":"Conférences Orientation Paul Duez",
+      "desc":"Un site web complet pour gérer les inscriptions aux conférences d'orientation, faciliter le suivi des élèves et optimiser l'organisation."
+    },
+    "project2":{
+      "title":"Serveur Minecraft EclozionMC",
+      "desc":"Un serveur Minecraft PvP Faction personnalisé avec des plugins custom et des événements communautaires."
+    },
+    "project3":{
+      "title":"La Guerre Des Capsules",
+      "desc":"Mon premier jeu vidéo, un FPS multijoueur développé avec le moteur Godot." 
+    },
+    "project4":{
+      "title":"Portfolio",
+      "desc":"Ce site même ! Une vitrine interactive et moderne développée sans framework."
+    }
+  }
+}

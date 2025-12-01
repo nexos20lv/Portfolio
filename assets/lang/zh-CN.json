@@ -1,0 +1,43 @@
+{
+  "nav":{
+    "brand":"皮埃尔",
+    "about":"关于我",
+    "skills":"技能",
+    "projects":"项目",
+    "contact":"联系",
+    "contact_btn":"联系我"
+  },
+  "hero":{
+    "title":"你好，我是皮埃尔",
+    "subtitle":"Web 开发者及科技爱好者",
+    "cta":"了解更多关于我"
+  },
+  "about":{
+    "title":"关于我",
+    "p1":"热衷于开发和新技术，我创建创新且高效的解决方案。我的方法结合了创造力和技术严谨性，以满足项目需求。",
+    "p2":"目前在 Paul Duez 高中学习 STI2D，我希望进入工程学院，深入学习软件开发和嵌入式系统。",
+    "location":"位于法国 Cambrai"
+  },
+  "skills":{
+    "title":"技能"
+  },
+  "projects":{
+    "title":"项目",
+    "project1":{
+      "title":"Paul Duez 指导会",
+      "desc":"一个完整的网站，用于管理指导会的注册，便于学生跟踪并优化组织。"
+    },
+    "project2":{
+      "title":"EclozionMC — Minecraft 服务器",
+      "desc":"一个定制的 PvP Faction Minecraft 服务器，带有插件和社区活动。"
+    },
+    "project3":{
+      "title":"La Guerre Des Capsules",
+      "desc":"我的第一个游戏 — 使用 Godot 开发的多人 FPS。" 
+    },
+    "project4":{
+      "title":"作品集",
+      "desc":"此网站 — 一个交互式且现代的作品集，无需框架构建。"
+    }
+  }
+}
