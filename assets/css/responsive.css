@@ -1,26 +1,20 @@
 /* Extra Small devices (phones, 320px and up) */
 @media (max-width: 480px) {
-
-    /* Navigation */
-    /* Navigation */
     nav {
-        width: 90vw;
-        top: 20px;
-        height: 60px;
-        /* Fixed height for the bar */
+        width: 92vw;
+        top: 15px;
+        height: 56px;
         border-radius: 50px;
-        /* Keep pill shape */
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 18px;
     }
 
     nav.menu-open {
         background-color: rgba(13, 6, 18, 0.95) !important;
         backdrop-filter: blur(20px) !important;
         border-radius: 20px;
-        /* Change shape when open */
         height: auto;
         flex-direction: column;
         align-items: flex-start;
@@ -38,17 +32,16 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        /* Allow wrapping */
     }
 
     .navList>li:first-child {
-        font-size: 20px;
+        font-size: 22px;
         position: static;
         transform: none;
         margin: 0;
+        font-weight: 600;
     }
 
-    /* Target the li containing .navLinks */
     .navList>li:nth-child(3) {
         width: 100%;
         order: 3;
@@ -67,7 +60,6 @@
 
     .navLinks {
         position: static;
-        /* Flow naturally in open menu */
         width: 100%;
         border-radius: 0;
         flex-direction: column;
@@ -76,21 +68,17 @@
         margin: 0;
         opacity: 0;
         display: none;
-        /* Hide by default */
         transition: opacity 0.3s ease;
         background: transparent;
-        /* Transparent inside the nav container */
     }
 
     .navLinks.active {
         display: flex;
-        /* Show when active */
         opacity: 1;
         visibility: visible;
         transform: none;
         background: transparent;
         align-items: center;
-        /* Center items horizontally */
     }
 
     .navLinks li {
@@ -110,42 +98,108 @@
 
     nav.menu-open.gradientBorder::after {
         display: block !important;
-        /* Keep border */
         border-radius: 20px;
     }
 
-    /* Hero Section */
+    #hero {
+        padding: 0 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .mainTexts {
+        margin-top: -60px;
+    }
+
     .mainTexts h1 {
-        font-size: 50px;
-        letter-spacing: -3px;
+        font-size: 48px;
+        letter-spacing: -2.5px;
         text-align: center;
+        margin-bottom: 12px;
     }
 
     .mainTexts h2 {
-        font-size: 16px;
+        font-size: 15px;
         text-align: center;
+        margin-bottom: 25px;
+        line-height: 1.6;
     }
 
-    /* About Section */
+    .contact-lanyard-embedded {
+        max-width: 100%;
+        margin: 25px auto 20px;
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .lanyard-header {
+        gap: 12px;
+    }
+
+    #lanyard-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    #lanyard-username {
+        font-size: 15px;
+    }
+
+    .lanyard-status p {
+        font-size: 12px;
+    }
+
+    #lanyard-status-indicator {
+        width: 10px;
+        height: 10px;
+    }
+
+    .social-links {
+        gap: 18px;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .social-links a {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .ctaAbout {
+        margin-top: 35px;
+        padding: 14px 26px;
+        font-size: 15px;
+        gap: 8px;
+    }
+
     #about {
         flex-direction: column-reverse;
         height: auto;
         min-height: 70vh;
-        padding: 20px;
-        gap: 30px;
+        padding: 40px 20px;
+        gap: 35px;
     }
 
     .aboutText {
         max-width: 100%;
         width: 100%;
         height: auto;
-        min-height: 300px;
-        padding: 30px 20px;
+        min-height: 280px;
+        padding: 32px 24px;
+    }
+
+    .aboutText p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 16px;
     }
 
     .aboutImgWrapper {
-        width: 75%;
-        height: 75%;
+        width: 200px;
+        height: 200px;
         border-radius: 100%;
     }
 
@@ -159,16 +213,36 @@
         border-radius: 100%;
     }
 
-    /* Skills Section */
     #skills {
         height: auto;
         min-height: 40vh;
-        padding: 20px;
+        padding: 40px 20px;
     }
 
     .sectionTitle {
-        font-size: 24px;
+        font-size: 28px;
         text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .skill-card {
+        padding: 18px 12px;
+    }
+
+    .skill-card i {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .skill-card h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
     .infiniteCarousel {
@@ -183,39 +257,51 @@
         font-size: 16px;
     }
 
-    /* Projects Section */
     #projects {
         height: auto;
         min-height: 100vh;
-        padding: 20px;
+        padding: 40px 20px;
         margin-bottom: 10vh;
     }
 
-    .projectsCtn {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-        justify-items: center;
+    .projects-carousel-container {
+        padding: 20px 0;
     }
 
-    .projectCard {
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        padding-bottom: 15px;
+    .project-card {
+        max-width: 330px;
+        margin: 0 auto;
     }
 
-    .projectImg {
+    .projectImgWrapper {
         height: 180px;
     }
 
-    /* Contact Section */
+    .projectInfos {
+        padding: 20px 18px;
+    }
+
+    .projectTitle {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .projectDesc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .projectButton {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
     #contact {
         flex-direction: column;
         height: auto;
         min-height: 30vh;
-        gap: 30px;
-        padding: 20px;
+        gap: 25px;
+        padding: 40px 20px;
     }
 
     .contact-link {
@@ -223,21 +309,23 @@
     }
 
     .contact-mail {
-        font-size: 24px;
+        font-size: 20px;
         text-align: center;
-        word-break: break-all;
+        word-break: break-word;
+        padding: 0 10px;
     }
 
     .contact-main h3 {
         text-align: center;
+        font-size: 26px;
+        margin-bottom: 18px;
     }
 
     .contact-main p {
         text-align: center;
-        font-size: 14px;
+        font-size: 13px;
     }
 
-    /* Background adjustments */
     #headerBlobCtn {
         transform: translate(-30%, -50%);
     }
@@ -250,27 +338,50 @@
         width: 90vw;
     }
 
-    #projects {
-        margin-bottom: 10vh;
+    dialog[open] {
+        width: 90vw;
+        max-width: 90vw;
+        margin: 20px auto;
+        padding: 25px 20px;
     }
 
-    #contact {
-        min-height: 20vh;
+    dialog h3 {
+        font-size: 22px;
+        margin-bottom: 16px;
     }
 
-    .contact-link {
-        display: none;
+    dialog p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .modal-links {
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .modal-link {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 14px;
     }
 }
 
 /* Ensure the language control (last nav item) is visible on mobile breakpoints
    Some earlier rules hide the last-child; override them here with higher specificity. */
-@media (max-width: 480px){
-    .navList>li:last-child{ display: list-item !important; visibility: visible !important; }
+@media (max-width: 480px) {
+    .navList>li:last-child {
+        display: list-item !important;
+        visibility: visible !important;
+    }
 }
 
-@media (min-width:481px) and (max-width:768px){
-    .navList>li:last-child{ display: list-item !important; visibility: visible !important; }
+@media (min-width:481px) and (max-width:768px) {
+    .navList>li:last-child {
+        display: list-item !important;
+        visibility: visible !important;
+    }
 }
 
 
