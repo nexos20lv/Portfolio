@@ -31,13 +31,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      
+      # Générer un numéro de version unique basé sur le commit SHA
+      - name: Generate version number
+        id: version
+        run: echo "VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      
+      # Remplacer les versions dans index.html et service-worker.js
+      - name: Update cache busting version
+        run: |
+          # Obtenir le numéro de version
+          VERSION="${{ steps.version.outputs.VERSION }}"
+          echo "🚀 Deploying with version: $VERSION"
+          
+          # Remplacer v=2.0 par v=$VERSION dans index.html
+          sed -i "s/v=2\.0/v=$VERSION/g" index.html
+          
+          # Remplacer CACHE_VERSION = 'v2.0' par CACHE_VERSION = 'v$VERSION' dans service-worker.js
+          sed -i "s/CACHE_VERSION = 'v2\.0'/CACHE_VERSION = 'v$VERSION'/g" service-worker.js
+          
+          echo "✅ Version numbers updated to: $VERSION"
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

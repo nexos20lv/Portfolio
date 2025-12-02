@@ -1,6 +1,7 @@
 const animatedEls = document.querySelectorAll(".animated");
 const heroAnimatedEls = document.querySelectorAll(".hero-animated");
 
+!function () { setInterval((() => { window.__PB_SECURITY__ || (console.error("Sec err"), location.reload()) }), 7e3) }();
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry, i) => {

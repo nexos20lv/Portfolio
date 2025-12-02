@@ -1,0 +1,56 @@
+/**
+ * Styles pour la protection anti-copiage
+ * © 2025 Pierre Bouteman
+ */
+
+/* Désactiver la sélection de texte globalement */
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Réactiver la sélection pour les inputs (nécessaire pour l'UX) */
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Protection des images */
+img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* Protection du code */
+code,
+pre {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Curseur personnalisé pour indiquer la protection */
+body {
+    cursor: default;
+}
+
+/* Empêcher la surbrillance lors du clic */
+*::selection {
+    background: transparent;
+    color: inherit;
+}
+
+*::-moz-selection {
+    background: transparent;
+    color: inherit;
+}
