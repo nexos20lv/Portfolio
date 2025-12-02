@@ -110,26 +110,33 @@
     }
 
     .mainTexts {
-        margin-top: -60px;
+        margin-top: 80px;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
     }
 
     .mainTexts h1 {
-        font-size: 48px;
-        letter-spacing: -2.5px;
+        font-size: 42px;
+        letter-spacing: -2px;
         text-align: center;
         margin-bottom: 12px;
+        line-height: 1.2;
     }
 
     .mainTexts h2 {
-        font-size: 15px;
+        font-size: 16px;
         text-align: center;
-        margin-bottom: 25px;
-        line-height: 1.6;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        padding: 0 10px;
     }
 
     .contact-lanyard-embedded {
         max-width: 100%;
-        margin: 25px auto 20px;
+        margin: 20px auto;
         padding: 15px;
         font-size: 14px;
     }
@@ -157,22 +164,29 @@
     }
 
     .social-links {
-        gap: 18px;
-        margin-top: 20px;
+        gap: 15px;
+        margin-top: 15px;
         justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .social-links a {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
     }
 
     .ctaAbout {
-        margin-top: 35px;
-        padding: 14px 26px;
-        font-size: 15px;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin: 30px auto 0;
+        padding: 12px 24px;
+        font-size: 14px;
         gap: 8px;
+        width: fit-content;
     }
 
     #about {
