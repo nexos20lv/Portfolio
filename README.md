@@ -1,5 +1,12 @@
 # Portfolio - Pierre Bouteman
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success?style=for-the-badge&logo=github)](https://nexos20lv.github.io/Portfolio/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![Maintenance](https://img.shields.io/badge/Maintained-Yes-green?style=for-the-badge)](https://github.com/nexos20lv/Portfolio/graphs/commit-activity)
+
 Bienvenue sur le dépôt de mon **portfolio personnel** — un site web moderne, responsive et interactif pour présenter mes projets, mes compétences et mon expérience en tant que développeur.
 
 ## ✨ Fonctionnalités
