@@ -35,17 +35,79 @@ function initKonamiCode() {
 }
 
 function activateKonamiEffect() {
-    document.body.style.transition = 'transform 2s ease-in-out';
-    document.body.style.transform = 'rotate(360deg)';
+    // Create modal overlay
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+    `;
 
-    setTimeout(() => {
-        document.body.style.transform = 'none';
-        setTimeout(() => {
-            document.body.style.transition = '';
-        }, 2000);
-    }, 2000);
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        background: linear-gradient(135deg, rgba(26, 11, 46, 0.98), rgba(45, 21, 72, 0.98));
+        border: 2px solid rgba(167, 132, 205, 0.5);
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 100px rgba(167, 132, 205, 0.4);
+        animation: scaleIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    `;
 
-    console.log('🎮 Konami Code Activated! You are a true gamer!');
+    modal.innerHTML = `
+        <div style="font-size: 60px; margin-bottom: 20px;">🎮</div>
+        <h2 style="color: #a78bfa; font-size: 28px; margin: 0 0 20px 0;">Konami Code Activé !</h2>
+        <p style="color: rgba(255, 255, 255, 0.9); font-size: 18px; line-height: 1.6; margin: 0;">
+            Tu vas être redirigé vers le portfolio de mon ami...<br>
+            <span style="color: #a78bfa; font-weight: bold;">Mais soyons honnêtes</span>, 
+            le mien est clairement meilleur ! 😎<br><br>
+            <span style="font-size: 14px; color: rgba(255, 255, 255, 0.6);">
+                (Je suis juste un meilleur dev 🚀)
+            </span>
+        </p>
+        <div style="margin-top: 30px; font-size: 14px; color: rgba(255, 255, 255, 0.5);">
+            Redirection dans <span id="countdown" style="color: #a78bfa; font-weight: bold;">5</span>...
+        </div>
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    // Countdown and redirect
+    let count = 5;
+    const countdownEl = modal.querySelector('#countdown');
+    const interval = setInterval(() => {
+        count--;
+        countdownEl.textContent = count;
+        if (count === 0) {
+            clearInterval(interval);
+            window.location.href = 'https://arka-ui.github.io/portfolio/';
+        }
+    }, 1000);
+
+    console.log('🎮 Konami Code Activated! Redirecting to a friend\'s portfolio...');
 }
 
 function initConsoleMessage() {

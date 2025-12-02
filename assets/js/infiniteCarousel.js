@@ -1,7 +1,8 @@
 const carousel = document.querySelector(".infiniteCarousel");
 const container = document.querySelector(".carouselContainer");
 
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+// Only run if carousel elements exist
+if (carousel && container && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     carousel.setAttribute("data-animated", true);
 
     // Duplicate items for seamless scrolling
