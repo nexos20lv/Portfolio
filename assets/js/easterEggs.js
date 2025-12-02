@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initKonamiCode();
     initConsoleMessage();
     initLogoClick();
+    initArkaEasterEgg();
 });
 
 function initKonamiCode() {
@@ -83,4 +84,21 @@ function initLogoClick() {
 function activateLogoEffect() {
     alert('🎉 You found a secret! 5 clicks on the logo!');
     // You could add more complex animations here later
+}
+
+function initArkaEasterEgg() {
+    const secretCode = 'arka';
+    let input = '';
+
+    document.addEventListener('keydown', (e) => {
+        input += e.key.toLowerCase();
+
+        if (input.length > secretCode.length) {
+            input = input.substr(input.length - secretCode.length);
+        }
+
+        if (input === secretCode) {
+            window.location.href = 'https://arka-ui.github.io/portfolio/';
+        }
+    });
 }
