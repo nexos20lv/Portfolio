@@ -107,6 +107,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        /* Ajout pour centrer les éléments enfants comme le CTA */
     }
 
     .mainTexts {
@@ -187,6 +189,8 @@
         font-size: 14px;
         gap: 8px;
         width: fit-content;
+        display: flex;
+        /* Assure que le flex fonctionne pour le centrage interne */
     }
 
     #about {
