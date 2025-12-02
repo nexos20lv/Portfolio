@@ -180,17 +180,7 @@
     }
 
     .ctaAbout {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: 30px auto 0;
-        padding: 12px 24px;
-        font-size: 14px;
-        gap: 8px;
-        width: fit-content;
-        display: flex;
-        /* Assure que le flex fonctionne pour le centrage interne */
+        display: none;
     }
 
     #about {
