@@ -70,13 +70,11 @@ function updateLanyardUI(data) {
     if (avatar && data.discord_user) {
         const avatarUrl = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=128`;
         avatar.src = avatarUrl;
-        console.log('👤 Avatar updated');
     }
 
     // Update username
     if (username && data.discord_user) {
         username.textContent = data.discord_user.username;
-        console.log('✏️ Username:', data.discord_user.username);
     }
 
     // Update status
@@ -84,17 +82,60 @@ function updateLanyardUI(data) {
         const status = data.discord_status || 'offline';
         statusIndicator.style.backgroundColor = getStatusColor(status);
         statusText.textContent = getStatusText(status);
-        console.log('🟢 Status:', status);
     }
 
-    // Update activity (Spotify)
-    if (activityDiv && data.spotify) {
+    // Prioritize activities: VS Code > Other Games > Spotify
+    let activity = null;
+
+    if (data.activities && data.activities.length > 0) {
+        // 1. Try to find VS Code
+        activity = data.activities.find(a => a.name === 'Code');
+
+        // 2. If not found, find any game/activity (type 0)
+        if (!activity) {
+            activity = data.activities.find(a => a.type === 0);
+        }
+
+        // 3. If still not found, check for Spotify
+        if (!activity && data.spotify) {
+            activity = {
+                name: 'Spotify',
+                details: data.spotify.song,
+                state: data.spotify.artist,
+                assets: {
+                    large_image: data.spotify.album_art_url, // Spotify object has this directly
+                    is_spotify: true // Flag to handle image differently
+                }
+            };
+        }
+    }
+
+    // Update Activity UI
+    if (activity && activityDiv) {
         activityDiv.style.display = 'flex';
-        if (activityImg) activityImg.src = data.spotify.album_art_url;
-        if (activityName) activityName.textContent = 'Spotify';
-        if (activityDetails) activityDetails.textContent = data.spotify.song;
-        if (activityState) activityState.textContent = data.spotify.artist;
-        console.log('🎵 Spotify:', data.spotify.song);
+
+        // Handle Image
+        if (activityImg) {
+            if (activity.assets && activity.assets.is_spotify) {
+                activityImg.src = activity.assets.large_image;
+            } else if (activity.assets && activity.assets.large_image) {
+                // Check if it's an external image (starts with mp:)
+                if (activity.assets.large_image.startsWith('mp:')) {
+                    activityImg.src = activity.assets.large_image.replace('mp:', 'https://media.discordapp.net/');
+                } else {
+                    activityImg.src = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
+                }
+            } else {
+                // Default image or hide if no image? 
+                // Let's use a default placeholder or the logo if no image
+                activityImg.src = './assets/img/logo.png';
+            }
+        }
+
+        if (activityName) activityName.textContent = activity.name;
+        if (activityDetails) activityDetails.textContent = activity.details || '';
+        if (activityState) activityState.textContent = activity.state || '';
+
     } else if (activityDiv) {
         activityDiv.style.display = 'none';
     }
