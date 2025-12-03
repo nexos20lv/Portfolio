@@ -1,1 +1,216 @@
-!function () { const e = new Date().getFullYear(), t = ["nexos20lv.github.io", "localhost", "127.0.0.1"], n = window.location.hostname; if (!t.some((e => n.includes(e)))) throw document.body.innerHTML = `<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#1a0b2e 0%,#3d1f5c 100%);color:white;font-family:'Outfit',Arial,sans-serif;text-align:center;padding:20px"><div style="font-size:100px;margin-bottom:20px">⚠️</div><h1 style="font-size:48px;margin-bottom:20px;color:#ff6b6b">Utilisation Non Autorisée Détectée</h1><p style="font-size:24px;max-width:800px;line-height:1.6;margin-bottom:30px">Ce portfolio appartient à <strong>Pierre Bouteman</strong> et est protégé par le droit d'auteur.</p><p style="font-size:18px;max-width:800px;line-height:1.6;margin-bottom:30px;opacity:0.9">L'utilisation de ce code source sans autorisation explicite constitue une violation du droit d'auteur et peut entraîner des poursuites légales.</p><div style="background:rgba(255,255,255,0.1);padding:30px;border-radius:15px;margin-top:20px"><p style="font-size:20px;margin-bottom:15px"><strong>© ${e} Pierre Bouteman - Tous droits réservés</strong></p><p style="font-size:16px;opacity:0.8">Portfolio officiel : <a href="https://nexos20lv.github.io/Portfolio/" style="color:#a784cd;text-decoration:none;font-weight:bold">nexos20lv.github.io/Portfolio</a></p><p style="font-size:16px;opacity:0.8;margin-top:10px">Contact : <a href="mailto:pierre.bouteman@icloud.com" style="color:#a784cd;text-decoration:none;font-weight:bold">pierre.bouteman@icloud.com</a></p></div><p style="font-size:14px;margin-top:40px;opacity:0.6">Domaine détecté : <code style="background:rgba(255,255,255,0.1);padding:5px 10px;border-radius:5px">${n}</code></p></div>`, new Error(`Unauthorized domain - © ${e} Pierre Bouteman`); console.log("%c⛔ STOP !", "color: #ff0000; font-size: 50px; font-weight: bold;"), console.log("%c🚨 Attention !", "color: #ff6b00; font-size: 30px; font-weight: bold;"), console.log(`%c⚠️ Ce site est protégé par le droit d'auteur.\n\n© ${e} Pierre Bouteman - Tous droits réservés.\n\nToute reproduction, modification ou utilisation du code source\nsans autorisation explicite est strictement interdite.\n\nSi vous souhaitez utiliser ce code, contactez-moi :\n📧 pierre.bouteman@icloud.com`, "color: #ffffff; font-size: 14px; line-height: 1.5;"), document.addEventListener("contextmenu", (function (e) { return e.preventDefault(), o(), !1 })), document.addEventListener("selectstart", (function (e) { return e.preventDefault(), !1 })), document.addEventListener("keydown", (function (e) { return 123 === e.keyCode || e.ctrlKey && e.shiftKey && 73 === e.keyCode || e.ctrlKey && e.shiftKey && 74 === e.keyCode || e.ctrlKey && e.shiftKey && 67 === e.keyCode || e.ctrlKey && 85 === e.keyCode || e.ctrlKey && 83 === e.keyCode ? (e.preventDefault(), o(), !1) : e.ctrlKey && 67 === e.keyCode || e.ctrlKey && 65 === e.keyCode ? (e.preventDefault(), !1) : void 0 })), document.addEventListener("dragstart", (function (e) { return e.preventDefault(), !1 })), document.addEventListener("copy", (function (t) { return t.preventDefault(), t.clipboardData.setData("text/plain", `© ${e} Pierre Bouteman - Contenu protégé par le droit d'auteur`), o(), !1 })), window.addEventListener("beforeprint", (function (e) { return e.preventDefault(), o(), !1 })), document.addEventListener("mousedown", (function (e) { if (1 === e.button) return e.preventDefault(), !1 })); let o = function () { if (event && event.target && event.target.closest && event.target.closest("a, button, input, select, textarea, [role=\"button\"]")) return; const t = document.createElement("div"); t.innerHTML = `<div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,rgba(167,132,205,0.95),rgba(227,209,245,0.95));color:#1a0b2e;padding:30px 40px;border-radius:20px;box-shadow:0 10px 40px rgba(167,132,205,0.4);z-index:999999;text-align:center;font-family:'Outfit',sans-serif;backdrop-filter:blur(10px);border:2px solid rgba(227,209,245,0.5);animation:slideIn 0.3s ease-out"><div style="font-size:50px;margin-bottom:10px">🔒</div><h3 style="margin:0 0 10px 0;font-size:24px;font-weight:700">Contenu Protégé</h3><p style="margin:0;font-size:16px;line-height:1.5">Ce portfolio est protégé par le droit d'auteur.<br><strong>© ${e} Pierre Bouteman</strong></p><p style="margin:15px 0 0 0;font-size:14px;opacity:0.8">Pour toute demande : <a href="mailto:pierre.bouteman@icloud.com" style="color:#1a0b2e;font-weight:600">pierre.bouteman@icloud.com</a></p></div>`; const n = document.createElement("style"); n.textContent = "@keyframes slideIn{from{opacity:0;transform:translate(-50%,-60%)}to{opacity:1;transform:translate(-50%,-50%)}}", document.head.appendChild(n), document.body.appendChild(t), setTimeout((() => { t.style.animation = "slideIn 0.3s ease-out reverse", setTimeout((() => { document.body.removeChild(t), document.head.removeChild(n) }), 300) }), 3e3) }; const a = document.createElement("meta"); a.name = "author", a.content = `Pierre Bouteman - © ${e} - Tous droits réservés`, document.head.appendChild(a); const i = () => { document.querySelectorAll("img").forEach((e => { e.style.userSelect = "none", e.style.pointerEvents = "none", e.draggable = !1, e.setAttribute("oncontextmenu", "return false;") })) }, r = () => { const t = document.createElement("div"); t.id = "copyright-watermark", t.innerHTML = `<div style="position:fixed;bottom:10px;right:10px;background:rgba(167,132,205,0.1);color:rgba(227,209,245,0.5);padding:8px 15px;border-radius:8px;font-size:12px;font-family:'Outfit',sans-serif;z-index:999998;pointer-events:none;backdrop-filter:blur(5px);border:1px solid rgba(227,209,245,0.2)">© ${e} Pierre Bouteman</div>`, document.body.appendChild(t), setInterval((() => { document.getElementById("copyright-watermark") || document.body.appendChild(t.cloneNode(!0)) }), 1e3) }; let c = !1; const d = 160; setInterval((function () { window.outerWidth - window.innerWidth > d || window.outerHeight - window.innerHeight > d ? c || (c = !0, console.clear(), console.log("%c🚨 Les outils de développement ont été détectés !", "color: #ff0000; font-size: 20px; font-weight: bold;"), console.log("%c⚠️ Rappel : Ce site est protégé par le droit d'auteur.", "color: #ff6b00; font-size: 16px;")) : c = !1 }), 500), window.addEventListener("load", (function () { i(), r(), document.body.style.userSelect = "none", document.body.style.webkitUserSelect = "none", document.body.style.msUserSelect = "none", document.body.style.mozUserSelect = "none", console.log("%c✅ Protections activées !", "color: #00ff00; font-size: 16px; font-weight: bold;") })), setTimeout((() => { console.log("%c💡 Conseil", "color: #ffd700; font-size: 18px; font-weight: bold;"), console.log("%cSi vous appréciez mon travail et souhaitez collaborer,\ncontactez-moi directement au lieu de copier ! 😊\n📧 pierre.bouteman@icloud.com\n🔗 https://github.com/nexos20lv", "color: #ffffff; font-size: 14px;") }), 2e3), window.__PB_SECURITY__ = !0, Object.defineProperty(window, "__PB_SECURITY__", { configurable: !1, writable: !1 }), setInterval((() => { window.__PB_SECURITY__ || location.reload() }), 5e3) }();
+/**
+ * Protection script
+ * Allows normal user interaction (copy/paste, right click)
+ * but attempts to block/detect DevTools.
+ * Includes IP-based admin bypass.
+ */
+
+(function () {
+    const currentYear = new Date().getFullYear();
+    const ALLOWED_IP = '2.11.247.57'; // REMPLACEZ CECI PAR VOTRE IP
+
+    // Check Admin IP
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            // Log IP to help user find it
+            console.log(`%c🔒 Detected IP: ${data.ip}`, "color: #888; font-size: 10px;");
+
+            if (data.ip === ALLOWED_IP) {
+                window.__PB_ADMIN__ = true;
+                console.log("%c🛡️ Admin access granted - Security disabled", "color: #00ff00; font-size: 14px; font-weight: bold;");
+
+                // Remove the custom context menu if it exists
+                const menu = document.getElementById('custom-context-menu');
+                if (menu) menu.remove();
+            }
+        })
+        .catch(err => console.error('Failed to check IP', err));
+
+    // Console Warning
+    console.log("%c⛔ STOP !", "color: #ff0000; font-size: 50px; font-weight: bold;");
+    console.log("%c🚨 Attention !", "color: #ff6b00; font-size: 30px; font-weight: bold;");
+    console.log(
+        `%c⚠️ Ce site est protégé par le droit d'auteur.\n\n© ${currentYear} Pierre Bouteman - Tous droits réservés.\n\nSi vous souhaitez utiliser ce code, contactez-moi :\n📧 pierre.bouteman@icloud.com`,
+        "color: #ffffff; font-size: 14px; line-height: 1.5;"
+    );
+
+    // Block DevTools shortcuts
+    document.addEventListener("keydown", function (e) {
+        if (window.__PB_ADMIN__) return; // Bypass for admin
+
+        // F12
+        if (e.keyCode === 123) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+            e.preventDefault();
+            return false;
+        }
+
+        // Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode === 85) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // Custom Context Menu
+    const createContextMenu = () => {
+        const menu = document.createElement('div');
+        menu.id = 'custom-context-menu';
+        menu.style.zIndex = '200000'; // Ensure it's above navbar
+        menu.innerHTML = `
+            <div class="ctx-menu-item" id="ctx-copy">
+                <i class="fas fa-copy"></i> Copier
+            </div>
+            <div class="ctx-menu-item" id="ctx-paste">
+                <i class="fas fa-paste"></i> Coller
+            </div>
+            <div class="ctx-menu-item" id="ctx-reload">
+                <i class="fas fa-rotate-right"></i> Recharger
+            </div>
+            <div class="ctx-menu-separator"></div>
+            <div class="ctx-menu-footer">
+                © ${currentYear} Pierre Bouteman
+            </div>
+        `;
+        document.body.appendChild(menu);
+
+        // Actions
+        document.getElementById('ctx-copy').addEventListener('click', () => {
+            document.execCommand('copy');
+            menu.style.display = 'none';
+        });
+
+        document.getElementById('ctx-paste').addEventListener('click', async () => {
+            try {
+                const text = await navigator.clipboard.readText();
+                if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) {
+                    const start = document.activeElement.selectionStart;
+                    const end = document.activeElement.selectionEnd;
+                    const val = document.activeElement.value;
+                    document.activeElement.value = val.slice(0, start) + text + val.slice(end);
+                    document.activeElement.selectionStart = document.activeElement.selectionEnd = start + text.length;
+                }
+            } catch (err) {
+                console.error('Failed to read clipboard', err);
+            }
+            menu.style.display = 'none';
+        });
+
+        document.getElementById('ctx-reload').addEventListener('click', () => {
+            location.reload();
+        });
+
+        return menu;
+    };
+
+    const contextMenu = createContextMenu();
+
+    // Handle Right Click
+    document.addEventListener("contextmenu", function (e) {
+        if (window.__PB_ADMIN__) return; // Bypass for admin (allow native menu)
+
+        e.preventDefault();
+
+        const menu = document.getElementById('custom-context-menu');
+        const copyBtn = document.getElementById('ctx-copy');
+        const pasteBtn = document.getElementById('ctx-paste');
+
+        // Enable/Disable Copy based on selection
+        if (window.getSelection().toString().length > 0) {
+            copyBtn.classList.remove('disabled');
+        } else {
+            copyBtn.classList.add('disabled');
+        }
+
+        // Enable/Disable Paste based on active element
+        if (document.activeElement && (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA')) {
+            pasteBtn.classList.remove('disabled');
+        } else {
+            pasteBtn.classList.add('disabled');
+        }
+
+        // Position
+        let x = e.clientX;
+        let y = e.clientY;
+
+        // Boundary check
+        if (x + 200 > window.innerWidth) x = window.innerWidth - 200;
+        if (y + menu.offsetHeight > window.innerHeight) y = window.innerHeight - menu.offsetHeight;
+
+        menu.style.left = `${x}px`;
+        menu.style.top = `${y}px`;
+        menu.style.display = 'flex';
+    });
+
+    // Close menu on click elsewhere
+    document.addEventListener('click', (e) => {
+        const menu = document.getElementById('custom-context-menu');
+        if (menu && !menu.contains(e.target)) {
+            menu.style.display = 'none';
+        }
+    });
+
+    // DevTools Detection (Window resize method + Debugger)
+    let devtoolsOpen = false;
+    const threshold = 160;
+
+    const checkDevTools = () => {
+        if (window.__PB_ADMIN__) return; // Bypass for admin
+
+        const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+        const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+
+        if (widthThreshold || heightThreshold) {
+            if (!devtoolsOpen) {
+                devtoolsOpen = true;
+                // Aggressive clearing
+                try {
+                    document.body.innerHTML = '';
+                    window.location.reload();
+                } catch (e) { }
+            }
+        } else {
+            devtoolsOpen = false;
+        }
+    };
+
+    setInterval(checkDevTools, 500);
+
+    // Debugger loop to annoy inspection
+    setInterval(() => {
+        if (window.__PB_ADMIN__) return; // Bypass for admin
+        debugger;
+    }, 100);
+
+    // Copyright Watermark
+    const addWatermark = () => {
+        const watermark = document.createElement("div");
+        watermark.id = "copyright-watermark";
+        watermark.innerHTML = `<div style="position:fixed;bottom:10px;right:10px;background:rgba(167,132,205,0.1);color:rgba(227,209,245,0.5);padding:8px 15px;border-radius:8px;font-size:12px;font-family:'Outfit',sans-serif;z-index:999998;pointer-events:none;backdrop-filter:blur(5px);border:1px solid rgba(227,209,245,0.2)">© ${currentYear} Pierre Bouteman</div>`;
+
+        if (!document.getElementById("copyright-watermark")) {
+            document.body.appendChild(watermark);
+        }
+    };
+
+    // Set global security flag immediately
+    window.__PB_SECURITY__ = true;
+
+    window.addEventListener("load", function () {
+        addWatermark();
+    });
+
+    // Re-add watermark if removed
+    setInterval(() => {
+        if (!document.getElementById("copyright-watermark")) {
+            addWatermark();
+        }
+    }, 2000);
+
+})();

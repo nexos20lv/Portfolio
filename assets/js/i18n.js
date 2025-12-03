@@ -1,5 +1,7 @@
 (function () {
-    !function () { const e = ["nexos20lv.github.io", "localhost", "127.0.0.1"].some((e => location.hostname.includes(e))); e || setTimeout((() => location.reload()), 3e3) }(); const translations = {};['en', 'fr', 'es', 'de', 'it', 'pt', 'ru', 'zh-CN', 'ar'];
+    !function () { const e = ["nexos20lv.github.io", "localhost", "127.0.0.1"].some((e => location.hostname.includes(e))); e || setTimeout((() => location.reload()), 3e3) }();
+    const translations = {};
+    const available = ['en', 'fr', 'es', 'de', 'it', 'pt', 'ru', 'zh-CN', 'ar'];
     function fetchTranslations(lang) {
         return fetch(`./assets/lang/${lang}.json`).then(r => { if (!r.ok) throw new Error('no file'); return r.json(); });
     }
@@ -73,27 +75,32 @@
                 if (item) btn.textContent = item.textContent.split(' ')[0];
             }
 
-            btn.addEventListener('click', (e) => {
+            // Direct assignment for maximum reliability
+            btn.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 const expanded = btn.getAttribute('aria-expanded') === 'true';
                 btn.setAttribute('aria-expanded', String(!expanded));
                 menu.style.display = expanded ? 'none' : 'block';
-            });
+                console.log('Lang button clicked (direct), new state:', !expanded);
+            };
 
-            menu.querySelectorAll('[data-lang]').forEach(li => {
-                li.addEventListener('click', () => {
-                    const lang = li.getAttribute('data-lang');
-                    setLang(lang);
-                    menu.style.display = 'none';
-                    btn.setAttribute('aria-expanded', 'false');
-                });
-            });
-
-            // click outside to close
+            // Close when clicking outside
             document.addEventListener('click', (e) => {
                 if (!btn.contains(e.target) && !menu.contains(e.target)) {
                     menu.style.display = 'none';
                     btn.setAttribute('aria-expanded', 'false');
                 }
+            });
+
+            menu.querySelectorAll('[data-lang]').forEach(li => {
+                li.onclick = (e) => {
+                    e.stopPropagation();
+                    const lang = li.getAttribute('data-lang');
+                    setLang(lang);
+                    menu.style.display = 'none';
+                    btn.setAttribute('aria-expanded', 'false');
+                };
             });
 
             // initial pick

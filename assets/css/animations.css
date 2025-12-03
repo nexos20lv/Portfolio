@@ -7,7 +7,7 @@
 #hero .hero-animated {
     opacity: 0;
     filter: blur(2px);
-    transition: 
+    transition:
         opacity 0.4s ease-out var(--delay, 0s),
         filter 0.4s ease-out var(--delay, 0s);
 }
@@ -17,28 +17,58 @@
     filter: blur(0);
 }
 
-#hero .mainTexts.hero-animated {
-    transform: translate(-50%, -50%) translateY(50px);
+/* Desktop Animations (with centering) */
+@media (min-width: 769px) {
+    #hero .mainTexts.hero-animated {
+        transform: translate(-50%, -50%) translateY(50px);
+    }
+
+    #hero .mainTexts.hero-animated.show {
+        transform: translate(-50%, -50%) translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
+
+    #hero .ctaAbout.hero-animated {
+        transform: translate(-50%, -50%) translateY(50px);
+    }
+
+    #hero .ctaAbout.hero-animated.show {
+        transform: translate(-50%, -50%) translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
 }
 
-#hero .mainTexts.hero-animated.show {
-    transform: translate(-50%, -50%) translateY(0);
-    transition: 
-        opacity 0.4s ease-out var(--delay, 0s),
-        filter 0.4s ease-out var(--delay, 0s),
-        transform 0.4s ease-out var(--delay, 0s);
-}
+/* Mobile Animations (no centering) */
+@media (max-width: 768px) {
+    #hero .mainTexts.hero-animated {
+        transform: translateY(50px);
+    }
 
-#hero .ctaAbout.hero-animated {
-    transform: translate(-50%, -50%) translateY(50px);
-}
+    #hero .mainTexts.hero-animated.show {
+        transform: translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
 
-#hero .ctaAbout.hero-animated.show {
-    transform: translate(-50%, -50%) translateY(0);
-    transition: 
-        opacity 0.4s ease-out var(--delay, 0s),
-        filter 0.4s ease-out var(--delay, 0s),
-        transform 0.4s ease-out var(--delay, 0s);
+    #hero .ctaAbout.hero-animated {
+        transform: translateY(50px);
+    }
+
+    #hero .ctaAbout.hero-animated.show {
+        transform: translateY(0);
+        transition:
+            opacity 0.4s ease-out var(--delay, 0s),
+            filter 0.4s ease-out var(--delay, 0s),
+            transform 0.4s ease-out var(--delay, 0s);
+    }
 }
 
 #hero .animated {
@@ -76,9 +106,9 @@
     opacity: 0;
     transform: translateY(60px);
     pointer-events: none;
-    transition: 
-      opacity 0.4s ease-out var(--delay, 0s),
-      transform 0.4s ease-out var(--delay, 0s);
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        transform 0.4s ease-out var(--delay, 0s);
 }
 
 .animated.show {
@@ -110,15 +140,15 @@ article.animated,
 
 nav.animated {
     opacity: 0;
-    transform: translateY(-20px);
-    transition: 
-      opacity 0.3s ease-out var(--delay, 0s),
-      transform 0.3s ease-out var(--delay, 0s);
+    transform: translateX(-50%) translateY(-20px);
+    transition:
+        opacity 0.3s ease-out var(--delay, 0s),
+        transform 0.3s ease-out var(--delay, 0s);
 }
 
 nav.animated.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .contact-main.animated {
@@ -138,9 +168,9 @@ nav.animated.show {
 }
 
 .contact-mail.animated {
-    transition: 
-      opacity 0.4s ease-out var(--delay, 0s),
-      transform 0.4s ease-out var(--delay, 0s),
-      background-position 0.3s ease,
-      text-decoration-color 0.3s ease;
+    transition:
+        opacity 0.4s ease-out var(--delay, 0s),
+        transform 0.4s ease-out var(--delay, 0s),
+        background-position 0.3s ease,
+        text-decoration-color 0.3s ease;
 }

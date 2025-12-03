@@ -129,7 +129,7 @@ nav {
     max-width: 90vw;
     border-radius: 50px;
     /* Pill shape */
-    z-index: 9999;
+    z-index: 100000;
     margin: 0 auto;
     border: 1px solid var(--glass-border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -182,6 +182,7 @@ nav.gradientBorder::after {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    pointer-events: auto;
 }
 
 .lang-btn::after {
@@ -201,7 +202,7 @@ nav.gradientBorder::after {
     padding: 8px 6px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
     min-width: 110px;
-    z-index: 1200;
+    z-index: 100001;
     list-style: none;
 }
 
@@ -789,18 +790,97 @@ section {
 }
 
 @keyframes pulse {
+    50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+}
 
-    0%,
-    100% {
+/* --- Protection Styles (Merged) --- */
+
+/* Allow text selection */
+* {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Allow pointer events on images */
+img {
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Custom Context Menu */
+#custom-context-menu {
+    position: fixed;
+    z-index: 10000;
+    width: 200px;
+    background: rgba(13, 6, 18, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    display: none;
+    flex-direction: column;
+    animation: menuFadeIn 0.2s ease-out;
+}
+
+@keyframes menuFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
         opacity: 1;
         transform: scale(1);
     }
-
-    50% {
-        opacity: 0.7;
-        transform: scale(1.1);
-    }
 }
+
+.ctx-menu-item {
+    padding: 10px 12px;
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.ctx-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+}
+
+.ctx-menu-item.disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.ctx-menu-separator {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+.ctx-menu-footer {
+    font-size: 10px;
+    color: var(--secondary-text-color);
+    text-align: center;
+    padding: 8px 0 4px;
+    opacity: 0.6;
+}
+
+
 
 .github-stats-grid {
     display: grid;
@@ -945,8 +1025,9 @@ section {
 
 /* Skills Grid */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     width: 90%;
     max-width: 1200px;
@@ -967,6 +1048,9 @@ section {
     gap: 12px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    flex: 1 1 150px;
+    min-width: 140px;
+    max-width: 300px;
 }
 
 .skill-card:hover {
@@ -1002,12 +1086,27 @@ section {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    margin-top: 4px;
+}
+
+.skill-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.skill-percentage {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--secondary-text-color);
 }
 
 .skill-level {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, var(--secondary-text-color), var(--accent-color));
+    background: var(--skill-color, linear-gradient(90deg, var(--secondary-text-color), var(--accent-color)));
     border-radius: 10px;
     transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 0 12px rgba(167, 132, 205, 0.5);
