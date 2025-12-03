@@ -22,8 +22,16 @@
     "title": "Fähigkeiten"
   },
   "contact": {
-    "title": "Möchten Sie mich kontaktieren?",
-    "footer": "Entworfen und entwickelt von mir selbst mit ❤️"
+    "title": "Kontaktiere Mich",
+    "subtitle": "Lass uns über dein Projekt sprechen",
+    "desc": "Zögere nicht, mich zu kontaktieren, um deine Ideen zu besprechen oder einfach Hallo zu sagen!",
+    "footer": "Entworfen und entwickelt von mir selbst mit ❤️",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "message": "Nachricht",
+      "send": "Senden"
+    }
   },
   "projects": {
     "title": "Projekte",

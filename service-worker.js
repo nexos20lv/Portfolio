@@ -1,5 +1,4 @@
-// Incrémenter cette version à chaque déploiement pour forcer la mise à jour du cache
-const CACHE_VERSION = 'v2.0';
+const CACHE_VERSION = 'v2.1';
 const CACHE_NAME = `portfolio-${CACHE_VERSION}`;
 
 const ASSETS_TO_CACHE = [
@@ -18,7 +17,6 @@ const ASSETS_TO_CACHE = [
     './assets/js/particles.js',
     './assets/js/skills-stats.js',
     './assets/js/skill-bars-animation.js',
-    './assets/js/infiniteCarousel.js',
     './assets/js/projects-carousel.js',
     './assets/js/modals.js',
     './assets/js/grainHeight.js',
@@ -26,7 +24,6 @@ const ASSETS_TO_CACHE = [
     './assets/js/loader.js',
     './assets/js/hash-reset.js',
     './assets/js/lanyard.js',
-    './assets/js/easterEggs.js',
     './assets/js/i18n.js',
     './assets/js/parallax.js',
     './assets/js/nav-scroll.js',
@@ -34,10 +31,8 @@ const ASSETS_TO_CACHE = [
     './assets/img/mii.png'
 ];
 
-// Installation du service worker
 self.addEventListener('install', (event) => {
     console.log('[ServiceWorker] Installation', CACHE_NAME);
-    // Force le service worker à s'activer immédiatement
     self.skipWaiting();
 
     event.waitUntil(
@@ -49,13 +44,15 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// Stratégie Network First : Toujours chercher sur le réseau en premier
 self.addEventListener('fetch', (event) => {
+    if (event.request.url.startsWith('chrome-extension') || event.request.url.includes('extension') || !(event.request.url.indexOf('http') === 0)) {
+        return;
+    }
+
     event.respondWith(
         fetch(event.request)
             .then((response) => {
-                // Si la requête réseau réussit, mettre à jour le cache
-                if (response && response.status === 200) {
+                if (response && response.status === 200 && response.type === 'basic') {
                     const responseToCache = response.clone();
                     caches.open(CACHE_NAME)
                         .then((cache) => {
@@ -65,7 +62,6 @@ self.addEventListener('fetch', (event) => {
                 return response;
             })
             .catch(() => {
-                // Si le réseau échoue, utiliser le cache (mode hors ligne)
                 return caches.match(event.request)
                     .then((response) => {
                         if (response) {
@@ -82,10 +78,8 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-// Activation et nettoyage des anciens caches
 self.addEventListener('activate', (event) => {
     console.log('[ServiceWorker] Activation', CACHE_NAME);
-    // Prendre le contrôle immédiatement
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(

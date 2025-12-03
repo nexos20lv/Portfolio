@@ -22,8 +22,16 @@
     "title": "Habilidades"
   },
   "contact": {
-    "title": "¿Quieres contactarme?",
-    "footer": "Diseñado y desarrollado por mí mismo con ❤️"
+    "title": "Contáctame",
+    "subtitle": "Hablemos de tu proyecto",
+    "desc": "¡No dudes en contactarme para discutir tus ideas o simplemente para saludar!",
+    "footer": "Diseñado y desarrollado por mí mismo con ❤️",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "send": "Enviar"
+    }
   },
   "projects": {
     "title": "Proyectos",

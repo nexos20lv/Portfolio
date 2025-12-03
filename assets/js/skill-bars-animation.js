@@ -1,7 +1,3 @@
-/**
- * Skill Bars Animation on Scroll
- */
-
 function animateSkillBars() {
     const skillCards = document.querySelectorAll('.skill-card');
 
@@ -10,19 +6,16 @@ function animateSkillBars() {
             if (entry.isIntersecting && !entry.target.classList.contains('animated-in')) {
                 entry.target.classList.add('animated-in');
 
-                // Animate the skill level bar
                 const skillLevel = entry.target.querySelector('.skill-level');
                 const skillTitle = entry.target.querySelector('h3');
 
                 if (skillLevel && skillTitle) {
                     const level = parseInt(skillLevel.dataset.level);
 
-                    // Add percentage text if not exists
                     if (!entry.target.querySelector('.skill-percentage')) {
                         const header = document.createElement('div');
                         header.className = 'skill-header';
 
-                        // Move title into header
                         skillTitle.parentNode.insertBefore(header, skillTitle);
                         header.appendChild(skillTitle);
 
@@ -32,14 +25,13 @@ function animateSkillBars() {
                         header.appendChild(percentage);
                     }
 
-                    // Calculate color based on percentage
                     let color;
                     if (level < 50) {
-                        color = 'linear-gradient(90deg, #ff6b6b, #ff8787)'; // Red-ish
+                        color = 'linear-gradient(90deg, #ff6b6b, #ff8787)';
                     } else if (level < 80) {
-                        color = 'linear-gradient(90deg, #fcc419, #ffe066)'; // Yellow/Orange
+                        color = 'linear-gradient(90deg, #fcc419, #ffe066)';
                     } else {
-                        color = 'linear-gradient(90deg, #51cf66, #69db7c)'; // Green
+                        color = 'linear-gradient(90deg, #51cf66, #69db7c)';
                     }
 
                     skillLevel.style.setProperty('--skill-width', `${level}%`);
@@ -52,7 +44,6 @@ function animateSkillBars() {
         threshold: 0.3
     });
 
-    // Sort cards by level descending
     const skillsGrid = document.querySelector('.skills-grid');
     if (skillsGrid) {
         const sortedCards = Array.from(skillCards).sort((a, b) => {
@@ -67,7 +58,6 @@ function animateSkillBars() {
     skillCards.forEach(card => observer.observe(card));
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', animateSkillBars);
 } else {

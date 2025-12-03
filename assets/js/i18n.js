@@ -1,5 +1,4 @@
 (function () {
-    !function () { const e = ["nexos20lv.github.io", "localhost", "127.0.0.1"].some((e => location.hostname.includes(e))); e || setTimeout((() => location.reload()), 3e3) }();
     const translations = {};
     const available = ['en', 'fr', 'es', 'de', 'it', 'pt', 'ru', 'zh-CN', 'ar'];
     function fetchTranslations(lang) {
@@ -22,7 +21,6 @@
         if (lang === 'auto') {
             lang = navigator.language || navigator.userLanguage || 'en';
         }
-        // prefer exact match (e.g. zh-CN), otherwise fallback to primary subtag, otherwise en
         let chosen = 'en';
         if (available.includes(lang)) chosen = lang;
         else if (lang.indexOf('-') !== -1) {
@@ -33,7 +31,6 @@
             applyTranslations(map);
             document.documentElement.lang = chosen;
             try { localStorage.setItem('site-lang', chosen); } catch (e) { }
-            // update UI button if present
             updateLangButton(chosen);
         }).catch(() => {
             fetchTranslations('en').then(map => { applyTranslations(map); document.documentElement.lang = 'en'; updateLangButton('en'); });
@@ -51,7 +48,6 @@
         }
     }
 
-    // init
     document.addEventListener('DOMContentLoaded', () => {
         const sel = document.getElementById('language-select');
         const btn = document.getElementById('lang-btn');
@@ -67,15 +63,12 @@
             return;
         }
 
-        // button+menu flow
         if (btn && menu) {
-            // set initial label
             if (saved) {
                 const item = menu.querySelector(`[data-lang="${saved}"]`);
                 if (item) btn.textContent = item.textContent.split(' ')[0];
             }
 
-            // Direct assignment for maximum reliability
             btn.onclick = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -85,7 +78,6 @@
                 console.log('Lang button clicked (direct), new state:', !expanded);
             };
 
-            // Close when clicking outside
             document.addEventListener('click', (e) => {
                 if (!btn.contains(e.target) && !menu.contains(e.target)) {
                     menu.style.display = 'none';
@@ -103,7 +95,6 @@
                 };
             });
 
-            // initial pick
             const start = saved || 'auto';
             setLang(start);
         }

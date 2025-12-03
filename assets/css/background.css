@@ -57,7 +57,7 @@ body {
 }
 
 #headerBlobCtn {
-    transform: translate(-45%, -50%);
+    transform: translate(calc(-45% + var(--p-x, 0px)), calc(-50% + var(--p-y, 0px)));
 }
 
 #headerBlob {
@@ -77,7 +77,7 @@ body {
 }
 
 #underHeaderBlobCtn {
-    transform: translate(-100%, -100%);
+    transform: translate(calc(-100% + var(--p-x, 0px)), calc(-100% + var(--p-y, 0px)));
 }
 
 #underHeaderBlob {
@@ -104,6 +104,7 @@ body {
     justify-content: end;
     filter: blur(100px);
     opacity: 0.75;
+    transform: translate(var(--p-x, 0px), var(--p-y, 0px));
 }
 
 #aboutBlob {
@@ -130,6 +131,7 @@ body {
     display: flex;
     justify-content: end;
     filter: blur(100px);
+    transform: translate(var(--p-x, 0px), var(--p-y, 0px));
 }
 
 #skillsBlob {
@@ -160,6 +162,7 @@ body {
     display: flex;
     justify-content: end;
     filter: blur(100px);
+    transform: translate(var(--p-x, 0px), var(--p-y, 0px));
 }
 
 #projectsBlob {

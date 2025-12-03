@@ -30,12 +30,14 @@ Bienvenue sur le dépôt de mon **portfolio personnel** — un site web moderne,
 ## 🛠️ Technologies Utilisées
 
 ### Front-End
+
 - **HTML5** : Structure sémantique.
 - **CSS3** : Variables personnalisées, Flexbox/Grid, Animations, Glassmorphism.
 - **JavaScript (ES6+)** : Manipulation du DOM, gestion WebSocket (Lanyard), logique du carrousel.
 - **FontAwesome** : Icônes vectorielles évolutives.
 
 ### APIs & Intégrations
+
 - **API Lanyard** : Connexion à Discord pour récupérer les données de présence (En ligne/Hors ligne, Jeux, Spotify).
 
 ---
@@ -73,13 +75,14 @@ portfolio/
 
 ## 🔧 Installation & Utilisation
 
-1.  **Cloner le dépôt** :
+1. **Cloner le dépôt** :
+
     ```bash
     git clone https://github.com/votre-username/portfolio.git
     cd portfolio
     ```
 
-2.  **Lancer localement** :
+2. **Lancer localement** :
     Ouvrez simplement `index.html` dans votre navigateur web préféré. Aucune étape de build ou de serveur n'est requise !
 
     *Optionnel : Utilisez une extension de serveur live (comme Live Server dans VS Code) pour une meilleure expérience de développement.*
@@ -94,6 +97,7 @@ portfolio/
 ## 📫 Contact
 
 N'hésitez pas à me contacter !
+
 - **Email** : [pierre.bouteman@icloud.com](mailto:pierre.bouteman@icloud.com)
 - **Discord** : Vérifiez le widget sur le site !
 

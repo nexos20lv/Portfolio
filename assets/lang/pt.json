@@ -22,8 +22,16 @@
     "title": "Competências"
   },
   "contact": {
-    "title": "Quer me contactar?",
-    "footer": "Projetado e desenvolvido por mim mesmo com ❤️"
+    "title": "Contate-me",
+    "subtitle": "Vamos falar sobre o seu projeto",
+    "desc": "Sinta-se à vontade para entrar em contato comigo para discutir suas ideias ou apenas para dizer olá!",
+    "footer": "Projetado e desenvolvido por mim mesmo com ❤️",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar"
+    }
   },
   "projects": {
     "title": "Projetos",

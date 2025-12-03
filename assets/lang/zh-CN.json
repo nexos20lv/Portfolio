@@ -22,8 +22,16 @@
     "title": "技能"
   },
   "contact": {
-    "title": "想联系我吗？",
-    "footer": "由我自己设计和开发，用 ❤️"
+    "title": "联系我",
+    "subtitle": "让我们谈谈你的项目",
+    "desc": "随时联系我讨论您的想法，或者只是打个招呼！",
+    "footer": "由我自己设计和开发 ❤️",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "信息",
+      "send": "发送"
+    }
   },
   "projects": {
     "title": "项目",

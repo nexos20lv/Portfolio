@@ -1,24 +1,15 @@
-/**
- * Advanced Interactive Particles
- * - Constellation effect (connecting lines)
- * - Mouse repulsion/attraction
- * - Dynamic resizing
- */
-
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 let particlesArray;
 
-// Configuration
 const config = {
     particleCount: 80,
     connectionDistance: 100,
     mouseRadius: 150,
-    baseColor: 'rgba(167, 132, 205, ', // alpha will be appended
+    baseColor: 'rgba(167, 132, 205, ',
     lineColor: 'rgba(167, 132, 205, '
 };
 
-// Mouse state
 let mouse = {
     x: null,
     y: null,
@@ -30,12 +21,10 @@ window.addEventListener('mousemove', (event) => {
     mouse.y = event.y;
 });
 
-// Setup Canvas
 function initCanvas() {
     const background = document.querySelector('.background');
     if (!background) return;
 
-    // Remove existing if any (for safety)
     const existing = document.getElementById('particles-canvas');
     if (existing) existing.remove();
 
@@ -46,7 +35,7 @@ function initCanvas() {
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.pointerEvents = 'none';
-    canvas.style.zIndex = '0'; // Behind everything
+    canvas.style.zIndex = '0';
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -77,7 +66,6 @@ class Particle {
     }
 
     update() {
-        // Check mouse position / interaction
         if (mouse.x !== null) {
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
@@ -105,22 +93,19 @@ class Particle {
             }
         }
 
-        // Move particle
         this.x += this.directionX;
         this.y += this.directionY;
 
-        // Bounce off edges
         if (this.x < 0 || this.x > canvas.width) this.directionX = -this.directionX;
         if (this.y < 0 || this.y > canvas.height) this.directionY = -this.directionY;
 
-        // Draw
         this.draw();
     }
 }
 
 function initParticles() {
     particlesArray = [];
-    let numberOfParticles = (canvas.width * canvas.height) / 9000; // Responsive count
+    let numberOfParticles = (canvas.width * canvas.height) / 9000;
     if (numberOfParticles < 50) numberOfParticles = 50;
     if (numberOfParticles > 150) numberOfParticles = 150;
 
@@ -145,7 +130,7 @@ function connect() {
 
             if (distance < (canvas.width / 7) * (canvas.height / 7)) {
                 opacityValue = 1 - (distance / 20000);
-                ctx.strokeStyle = config.lineColor + opacityValue * 0.15 + ')'; // Faint lines
+                ctx.strokeStyle = config.lineColor + opacityValue * 0.15 + ')';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -166,7 +151,6 @@ function animate() {
     connect();
 }
 
-// Resize event
 window.addEventListener('resize', () => {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
@@ -174,13 +158,11 @@ window.addEventListener('resize', () => {
     initParticles();
 });
 
-// Mouse out
 window.addEventListener('mouseout', () => {
     mouse.x = undefined;
     mouse.y = undefined;
 });
 
-// Start
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCanvas);
 } else {

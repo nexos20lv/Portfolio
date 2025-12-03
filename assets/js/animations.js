@@ -1,9 +1,13 @@
-const animatedEls = document.querySelectorAll(".animated");
-const heroAnimatedEls = document.querySelectorAll(".hero-animated");
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedEls = document.querySelectorAll('.animated');
+    const heroAnimatedEls = document.querySelectorAll('.hero-animated');
 
-!function () { setInterval((() => { window.__PB_SECURITY__ || (console.error("Sec err"), location.reload()) }), 7e3) }();
-const observer = new IntersectionObserver(
-    (entries) => {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
             entry.target.style.setProperty("--delay", `${i * 0.1}s`);
             if (entry.isIntersecting) {
@@ -26,28 +30,29 @@ const observer = new IntersectionObserver(
             }
         });
     },
-    { threshold: 0.1 }
-);
+        { threshold: 0.1 }
+    );
 
-const heroObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry, i) => {
-            entry.target.style.setProperty("--delay", `${i * 0.2}s`);
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            } else {
-                entry.target.classList.remove("show");
-            }
-        });
-    },
-    { threshold: 0.1 }
-);
+    const heroObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry, i) => {
+                entry.target.style.setProperty("--delay", `${i * 0.2}s`);
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove("show");
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
 
-function startOpeningAnimations() {
-    animatedEls.forEach((el) => observer.observe(el));
-    heroAnimatedEls.forEach((el) => heroObserver.observe(el));
-}
+    function startOpeningAnimations() {
+        animatedEls.forEach((el) => observer.observe(el));
+        heroAnimatedEls.forEach((el) => heroObserver.observe(el));
+    }
 
-window.addEventListener("loaderFinished", () => {
-    startOpeningAnimations();
+    window.addEventListener("loaderFinished", () => {
+        startOpeningAnimations();
+    });
 });

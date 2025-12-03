@@ -1,10 +1,5 @@
-/**
- * GitHub Project Stats on Cards
- * Fetches and displays stats directly on each project card
- */
-
 const GITHUB_USERNAME = 'nexos20lv';
-const CACHE_DURATION = 3600000; // 1 hour
+const CACHE_DURATION = 3600000;
 
 class ProjectStatsManager {
     constructor(username) {
@@ -110,7 +105,6 @@ class ProjectStatsManager {
     }
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         const manager = new ProjectStatsManager(GITHUB_USERNAME);

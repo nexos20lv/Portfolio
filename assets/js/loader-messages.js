@@ -1,7 +1,3 @@
-/**
- * Loader with random funny messages
- */
-
 const loaderMessages = [
     "Chargement du portfolio le plus stylé... 🚀",
     "Compilation du code parfait... 💻",
@@ -27,7 +23,6 @@ const loaderMessages = [
 
 let loaderInterval;
 
-// Select random message
 function setRandomLoaderMessage() {
     const loaderText = document.getElementById('loader-text');
     if (loaderText) {
@@ -36,11 +31,9 @@ function setRandomLoaderMessage() {
     }
 }
 
-// Start immediately
 setRandomLoaderMessage();
 loaderInterval = setInterval(setRandomLoaderMessage, 2000);
 
-// Stop when page is loaded
 window.addEventListener('load', () => {
     if (loaderInterval) {
         clearInterval(loaderInterval);
