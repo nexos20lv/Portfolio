@@ -13,7 +13,7 @@
     --selection-text: #ffffff;
 }
 
-/* dark theme only (default). Light theme removed as requested */
+
 
 html {
     overflow-x: hidden;
@@ -263,7 +263,26 @@ nav.gradientBorder::after {
 }
 
 .theme-toggle {
-    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .burger-menu {

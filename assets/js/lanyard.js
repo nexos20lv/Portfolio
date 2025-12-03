@@ -15,7 +15,6 @@ function connectLanyard() {
 
     ws.onmessage = (event) => {
         const data = JSON.parse(event.data);
-        console.log('📥 Lanyard message:', data);
 
         if (data.op === 1) {
             const heartbeat_interval = data.d.heartbeat_interval;
@@ -46,26 +45,17 @@ function connectLanyard() {
 }
 
 function updateLanyardUI(data) {
-    console.log('🔄 Updating UI with data:', data);
+    if (!data) return;
 
+    // Update User Info
     const avatar = document.getElementById('lanyard-avatar');
     const username = document.getElementById('lanyard-username');
+    const customStatus = document.getElementById('lanyard-custom-status');
     const statusIndicator = document.getElementById('lanyard-status-indicator');
     const statusText = document.getElementById('lanyard-status-text');
-    const activityDiv = document.getElementById('lanyard-activity');
-    const activityImg = document.getElementById('lanyard-activity-img');
-    const activityName = document.getElementById('lanyard-activity-name');
-    const activityDetails = document.getElementById('lanyard-activity-details-text');
-    const activityState = document.getElementById('lanyard-activity-state');
-
-    if (!data) {
-        console.warn('⚠️ No data received');
-        return;
-    }
 
     if (avatar && data.discord_user) {
-        const avatarUrl = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=128`;
-        avatar.src = avatarUrl;
+        avatar.src = `https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=128`;
     }
 
     if (username && data.discord_user) {
@@ -78,52 +68,119 @@ function updateLanyardUI(data) {
         statusText.textContent = getStatusText(status);
     }
 
-    let activity = null;
+    // Handle Activities
+    let activities = data.activities || [];
 
-    if (data.activities && data.activities.length > 0) {
-        activity = data.activities.find(a => a.name === 'Code');
-
-        if (!activity) {
-            activity = data.activities.find(a => a.type === 0);
-        }
-
-        if (!activity && data.spotify) {
-            activity = {
-                name: 'Spotify',
-                details: data.spotify.song,
-                state: data.spotify.artist,
-                assets: {
-                    large_image: data.spotify.album_art_url,
-                    is_spotify: true
-                }
-            };
-        }
+    // Extract Custom Status (Type 4)
+    const customStatusActivity = activities.find(a => a.type === 4);
+    if (customStatus && customStatusActivity) {
+        customStatus.textContent = customStatusActivity.state || '';
+        customStatus.style.display = 'block';
+    } else if (customStatus) {
+        customStatus.style.display = 'none';
     }
 
-    if (activity && activityDiv) {
-        activityDiv.style.display = 'flex';
+    // Filter out custom status from activities list
+    activities = activities.filter(a => a.type !== 4);
 
-        if (activityImg) {
-            if (activity.assets && activity.assets.is_spotify) {
-                activityImg.src = activity.assets.large_image;
-            } else if (activity.assets && activity.assets.large_image) {
-                if (activity.assets.large_image.startsWith('mp:')) {
-                    activityImg.src = activity.assets.large_image.replace('mp:', 'https://media.discordapp.net/');
-                } else {
-                    activityImg.src = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
-                }
+    // Sort activities: Spotify > VS Code > Others
+    const sortedActivities = activities.sort((a, b) => {
+        const getPriority = (act) => {
+            if (act.name === 'Spotify') return 3;
+            if (act.name === 'Visual Studio Code' || act.name === 'Code') return 2;
+            return 1;
+        };
+        return getPriority(b) - getPriority(a);
+    });
+
+    const primaryActivity = sortedActivities[0];
+    const otherActivities = sortedActivities.slice(1);
+
+    renderPrimaryActivity(primaryActivity);
+    renderOtherActivities(otherActivities);
+}
+
+function renderPrimaryActivity(activity) {
+    const container = document.getElementById('lanyard-primary-activity');
+    const img = document.getElementById('lanyard-primary-img');
+    const name = document.getElementById('lanyard-primary-name');
+    const details = document.getElementById('lanyard-primary-details');
+    const state = document.getElementById('lanyard-primary-state');
+
+    if (!activity) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'flex';
+    name.textContent = activity.name;
+    details.textContent = activity.details || '';
+    state.textContent = activity.state || '';
+
+    // Image logic
+    let imageUrl = './assets/img/logo.png';
+    if (activity.name === 'Spotify' && activity.assets && activity.assets.large_image) {
+        imageUrl = `https://i.scdn.co/image/${activity.assets.large_image.replace('spotify:', '')}`;
+    } else if (activity.assets && activity.assets.large_image) {
+        if (activity.assets.large_image.startsWith('mp:')) {
+            imageUrl = activity.assets.large_image.replace('mp:', 'https://media.discordapp.net/');
+        } else {
+            imageUrl = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
+        }
+    }
+    img.src = imageUrl;
+}
+
+function renderOtherActivities(activities) {
+    const moreBtn = document.getElementById('lanyard-more');
+    const moreText = document.getElementById('lanyard-more-text');
+    const otherList = document.getElementById('lanyard-other-activities');
+
+    if (activities.length === 0) {
+        moreBtn.style.display = 'none';
+        otherList.style.display = 'none';
+        return;
+    }
+
+    moreBtn.style.display = 'flex';
+    moreText.textContent = `${activities.length} autre${activities.length > 1 ? 's' : ''} activité${activities.length > 1 ? 's' : ''}`;
+
+    // Clear previous list
+    otherList.innerHTML = '';
+
+    activities.forEach(activity => {
+        const div = document.createElement('div');
+        div.className = 'lanyard-activity';
+
+        // Image logic
+        let imageUrl = './assets/img/logo.png';
+        if (activity.name === 'Spotify' && activity.assets && activity.assets.large_image) {
+            imageUrl = `https://i.scdn.co/image/${activity.assets.large_image.replace('spotify:', '')}`;
+        } else if (activity.assets && activity.assets.large_image) {
+            if (activity.assets.large_image.startsWith('mp:')) {
+                imageUrl = activity.assets.large_image.replace('mp:', 'https://media.discordapp.net/');
             } else {
-                activityImg.src = './assets/img/logo.png';
+                imageUrl = `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`;
             }
         }
 
-        if (activityName) activityName.textContent = activity.name;
-        if (activityDetails) activityDetails.textContent = activity.details || '';
-        if (activityState) activityState.textContent = activity.state || '';
+        div.innerHTML = `
+            <img src="${imageUrl}" alt="${activity.name}">
+            <div class="lanyard-activity-details">
+                <p class="activity-name">${activity.name}</p>
+                <p class="activity-details">${activity.details || ''}</p>
+                <p class="activity-state">${activity.state || ''}</p>
+            </div>
+        `;
+        otherList.appendChild(div);
+    });
 
-    } else if (activityDiv) {
-        activityDiv.style.display = 'none';
-    }
+    // Toggle logic
+    moreBtn.onclick = () => {
+        const isExpanded = otherList.style.display === 'flex';
+        otherList.style.display = isExpanded ? 'none' : 'flex';
+        moreBtn.classList.toggle('expanded', !isExpanded);
+    };
 }
 
 function getStatusColor(status) {

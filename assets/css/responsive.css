@@ -11,6 +11,11 @@
         padding: 0 18px;
     }
 
+    /* Hide nav links on mobile */
+    .navList>li:not(:first-child):not(:last-child) {
+        display: none;
+    }
+
     nav.menu-open {
         background-color: rgba(13, 6, 18, 0.95) !important;
         backdrop-filter: blur(20px) !important;
@@ -403,6 +408,11 @@
         height: auto;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+    }
+
+    /* Hide nav links on tablet */
+    .navList>li:not(:first-child):not(:last-child) {
+        display: none;
     }
 
     nav.menu-open {

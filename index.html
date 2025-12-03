@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="./assets/css/modal-links.css?v=2.0" />
     <link rel="stylesheet" href="./assets/css/social-links.css?v=2.0" />
     <link rel="stylesheet" href="./assets/css/loader.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/blog.css?v=2.0" />
+    <link rel="stylesheet" href="./assets/css/lanyard.css?v=2.0" />
     <!-- Custom UI styles merged into main.css -->
     <title>Pierre Bouteman | Portfolio</title>
 </head>
@@ -84,6 +86,9 @@
     <nav class="gradientBorder">
         <ul class="navList">
             <li><a href="#hero" class="link gradientText" data-i18n="nav.brand">Pierre</a></li>
+            <li><a href="#about" class="link" data-i18n="nav.about">À Propos</a></li>
+            <li><a href="#skills" class="link" data-i18n="nav.skills">Compétences</a></li>
+            <li><a href="#projects" class="link" data-i18n="nav.projects">Projets</a></li>
             <li style="margin-left:auto;" class="nav-controls" aria-hidden="false">
                 <div class="lang-wrapper">
                     <button id="lang-btn" class="lang-btn" aria-haspopup="true" aria-expanded="false"
@@ -115,18 +120,34 @@
                     <img id="lanyard-avatar" src="./assets/img/logo.png" alt="Avatar">
                     <div class="lanyard-user-info">
                         <p id="lanyard-username">Loading...</p>
+                        <p id="lanyard-custom-status" class="custom-status"></p>
                         <div class="lanyard-status">
                             <span id="lanyard-status-indicator"></span>
                             <p id="lanyard-status-text">Offline</p>
                         </div>
                     </div>
                 </div>
-                <div id="lanyard-activity" style="display: none;">
-                    <img id="lanyard-activity-img" src="" alt="Activity">
-                    <div class="lanyard-activity-details">
-                        <p id="lanyard-activity-name">Spotify</p>
-                        <p id="lanyard-activity-details-text">Song Title</p>
-                        <p id="lanyard-activity-state">Artist</p>
+
+                <div id="lanyard-activities-container">
+                    <!-- Primary Activity -->
+                    <div id="lanyard-primary-activity" class="lanyard-activity" style="display: none;">
+                        <img id="lanyard-primary-img" src="" alt="Activity">
+                        <div class="lanyard-activity-details">
+                            <p id="lanyard-primary-name" class="activity-name">Spotify</p>
+                            <p id="lanyard-primary-details" class="activity-details">Song Title</p>
+                            <p id="lanyard-primary-state" class="activity-state">Artist</p>
+                        </div>
+                    </div>
+
+                    <!-- More Activities Button -->
+                    <div id="lanyard-more" class="lanyard-more" style="display: none;">
+                        <span id="lanyard-more-text">2 autres activités</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Other Activities List -->
+                    <div id="lanyard-other-activities" class="lanyard-other-list" style="display: none;">
+                        <!-- Dynamic content -->
                     </div>
                 </div>
             </div>
@@ -241,48 +262,49 @@
                     <div id="form-status" class="form-status"></div>
                 </form>
             </div>
+            <!-- Footer -->
+            <footer>
+                <p>&copy; <span id="year"></span> Pierre Bouteman. All rights reserved.</p>
+            </footer>
 
-            <div class="footer-bottom">
-                <p data-i18n="contact.footer" id="copyright-text">© 2025 Pierre Bouteman. Tous droits réservés.</p>
-                <script>
-                    document.getElementById('copyright-text').textContent = '© ' + new Date().getFullYear() + ' Pierre Bouteman. Tous droits réservés.';
-                </script>
-            </div>
-        </div>
-    </footer>
+            <!-- Scripts -->
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+            <script src="./assets/js/animations.js?v=2.0"></script>
+            <script src="./assets/js/particles.js?v=2.0"></script>
+            <script src="./assets/js/skills-stats.js?v=2.0"></script>
+            <script src="./assets/js/skills.js?v=2.0"></script>
+            <script src="./assets/js/skill-bars-animation.js?v=2.0"></script>
+            <!-- <script src="./assets/js/infiniteCarousel.js?v=2.0"></script> Unused -->
+            <script src="./assets/js/projects-carousel.js?v=2.0"></script>
+            <script src="./assets/js/modals.js?v=2.0"></script>
+            <script src="./assets/js/grainHeight.js?v=2.0"></script>
+            <script src="./assets/js/loader-messages.js?v=2.0"></script>
+            <script src="./assets/js/loader.js?v=2.0"></script>
+            <script src="./assets/js/hash-reset.js?v=2.0"></script>
+            <script src="./assets/js/lanyard.js?v=2.0"></script>
 
-    <script src="./assets/js/animations.js?v=2.0"></script>
-    <script src="./assets/js/particles.js?v=2.0"></script>
-    <script src="./assets/js/skills-stats.js?v=2.0"></script>
-    <script src="./assets/js/skills.js?v=2.0"></script>
-    <script src="./assets/js/skill-bars-animation.js?v=2.0"></script>
-    <!-- <script src="./assets/js/infiniteCarousel.js?v=2.0"></script> Unused -->
-    <script src="./assets/js/projects-carousel.js?v=2.0"></script>
-    <script src="./assets/js/modals.js?v=2.0"></script>
-    <script src="./assets/js/grainHeight.js?v=2.0"></script>
-    <script src="./assets/js/loader-messages.js?v=2.0"></script>
-    <script src="./assets/js/loader.js?v=2.0"></script>
-    <script src="./assets/js/hash-reset.js?v=2.0"></script>
-    <script src="./assets/js/lanyard.js?v=2.0"></script>
+            <script src="./assets/js/parallax.js?v=2.0"></script>
+            <script src="./assets/js/nav-scroll.js?v=2.0"></script>
+            <script src="./assets/js/contact.js?v=2.0"></script>
 
-    <script src="./assets/js/parallax.js?v=2.0"></script>
-    <script src="./assets/js/nav-scroll.js?v=2.0"></script>
-    <script src="./assets/js/contact.js?v=2.0"></script>
 
-    <script src="./assets/js/main.js?v=2.0"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./service-worker.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(err => {
-                        console.log('ServiceWorker registration failed: ', err);
+
+            <script src="./assets/js/main.js?v=2.0"></script>
+            <script>
+                if ('serviceWorker' in navigator) {
+                    window.addEventListener('load', () => {
+                        navigator.serviceWorker.register('./service-worker.js')
+                            .then(registration => {
+                                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                            })
+                            .catch(err => {
+                                console.log('ServiceWorker registration failed: ', err);
+                            });
                     });
-            });
-        }
-    </script>
+                }
+            </script>
 </body>
 
 </html>
