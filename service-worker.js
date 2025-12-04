@@ -24,7 +24,7 @@ const ASSETS_TO_CACHE = [
     './assets/js/loader.js',
     './assets/js/hash-reset.js',
     './assets/js/lanyard.js',
-    './assets/js/i18n.js',
+    './assets/js/language.js',
     './assets/js/parallax.js',
     './assets/js/nav-scroll.js',
     './assets/img/logo.png',

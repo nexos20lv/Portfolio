@@ -5,12 +5,10 @@ let ws;
 let heartbeatInterval;
 
 function connectLanyard() {
-    console.log('🔌 Connecting to Lanyard...');
-
     ws = new WebSocket(LANYARD_WS_URL);
 
     ws.onopen = () => {
-        console.log('✅ WebSocket connected');
+        // Connected
     };
 
     ws.onmessage = (event) => {
@@ -38,7 +36,6 @@ function connectLanyard() {
     };
 
     ws.onclose = () => {
-        console.log('🔄 WebSocket closed, reconnecting...');
         clearInterval(heartbeatInterval);
         setTimeout(connectLanyard, 3000);
     };

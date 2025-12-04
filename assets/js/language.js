@@ -100,5 +100,5 @@
         }
     });
 
-    window.__i18n = { setLang };
+    window.__language = { setLang };
 })();
