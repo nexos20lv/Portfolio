@@ -78,6 +78,13 @@
                 console.log('Lang button clicked (direct), new state:', !expanded);
             };
 
+            btn.onkeydown = (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    btn.click();
+                }
+            };
+
             document.addEventListener('click', (e) => {
                 if (!btn.contains(e.target) && !menu.contains(e.target)) {
                     menu.style.display = 'none';
@@ -86,12 +93,19 @@
             });
 
             menu.querySelectorAll('[data-lang]').forEach(li => {
+                li.tabIndex = 0;
                 li.onclick = (e) => {
                     e.stopPropagation();
                     const lang = li.getAttribute('data-lang');
                     setLang(lang);
                     menu.style.display = 'none';
                     btn.setAttribute('aria-expanded', 'false');
+                };
+                li.onkeydown = (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        li.click();
+                    }
                 };
             });
 

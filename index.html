@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="./assets/img/logo.png">
     <link rel="apple-touch-icon" href="./assets/img/logo.png">
+    <link rel="preload" as="image" href="./assets/img/logo.png">
+    <link rel="canonical" href="https://nexos20lv.github.io/Portfolio/">
     <link rel="stylesheet" href="./assets/css/main.css?v=2.0" />
     <link rel="stylesheet" href="./assets/css/background.css?v=2.0" />
     <link rel="stylesheet" href="./assets/css/animations.css?v=2.0" />
@@ -51,6 +53,34 @@
     <link rel="stylesheet" href="./assets/css/lanyard.css?v=2.0" />
     <!-- Custom UI styles merged into main.css -->
     <title>Pierre Bouteman | Portfolio</title>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Person",
+                    "name": "Pierre Bouteman",
+                    "url": "https://nexos20lv.github.io/Portfolio/",
+                    "sameAs": [
+                        "https://github.com/nexos20lv",
+                        "https://www.instagram.com/btm.pierre/"
+                    ],
+                    "jobTitle": "Web Developer",
+                    "image": "https://nexos20lv.github.io/Portfolio/assets/img/logo.png",
+                    "description": "Développeur Web créant des sites performants et accessibles."
+                },
+                {
+                    "@type": "WebSite",
+                    "url": "https://nexos20lv.github.io/Portfolio/",
+                    "name": "Pierre Bouteman | Portfolio",
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Pierre Bouteman"
+                    }
+                }
+            ]
+        }
+        </script>
 </head>
 
 <body>
@@ -62,25 +92,25 @@
     </div>
     <div class="background">
         <div class="crossPatternCtn">
-            <img src="./assets/img/background/crossPattern.png" alt="" />
+            <img src="./assets/img/background/crossPattern.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
         </div>
         <div class="grain" width="100%" height="100%"></div>
         <div class="headerBlobsCtn">
             <div class="blobCtn" id="headerBlobCtn">
-                <img class="blob" id="headerBlob" src="./assets/img/background/blobs/header.png" />
+                <img class="blob" id="headerBlob" src="./assets/img/background/blobs/header.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
             </div>
             <div class="blobCtn" id="underHeaderBlobCtn">
-                <img class="blob" id="underHeaderBlob" src="./assets/img/background/blobs/underHeader.png" />
+                <img class="blob" id="underHeaderBlob" src="./assets/img/background/blobs/underHeader.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
             </div>
         </div>
         <div class="blobCtn" id="aboutBlobCtn">
-            <img class="blob" id="aboutBlob" src="./assets/img/background/blobs/about.png" />
+            <img class="blob" id="aboutBlob" src="./assets/img/background/blobs/about.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
         </div>
         <div class="blobCtn" id="skillsBlobCtn">
-            <img class="blob" id="skillsBlob" src="./assets/img/background/blobs/skills.png" />
+            <img class="blob" id="skillsBlob" src="./assets/img/background/blobs/skills.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
         </div>
         <div class="blobCtn" id="projectsBlobCtn">
-            <img class="blob" id="projectsBlob" src="./assets/img/background/blobs/projects.png" />
+            <img class="blob" id="projectsBlob" src="./assets/img/background/blobs/projects.png" alt="" loading="lazy" decoding="async" aria-hidden="true" />
         </div>
     </div>
     <nav class="gradientBorder">
@@ -117,7 +147,7 @@
 
             <div class="contact-lanyard-embedded">
                 <div class="lanyard-header">
-                    <img id="lanyard-avatar" src="./assets/img/logo.png" alt="Avatar">
+                    <img id="lanyard-avatar" src="./assets/img/logo.png" alt="Avatar" loading="eager" decoding="async">
                     <div class="lanyard-user-info">
                         <p id="lanyard-username">Loading...</p>
                         <p id="lanyard-custom-status" class="custom-status"></p>
@@ -131,7 +161,7 @@
                 <div id="lanyard-activities-container">
                     <!-- Primary Activity -->
                     <div id="lanyard-primary-activity" class="lanyard-activity" style="display: none;">
-                        <img id="lanyard-primary-img" src="" alt="Activity">
+                        <img id="lanyard-primary-img" src="" alt="Activity" loading="lazy" decoding="async">
                         <div class="lanyard-activity-details">
                             <p id="lanyard-primary-name" class="activity-name">Spotify</p>
                             <p id="lanyard-primary-details" class="activity-details">Song Title</p>
@@ -202,8 +232,8 @@
             </p>
         </div>
         <div class="aboutImgWrapper gradientBorder animated">
-            <div class="aboutImg">
-                <img class="animated" src="./assets/img/mii.png" alt="Mon Mii" />
+                <div class="aboutImg">
+                <img class="animated" src="./assets/img/mii.png" alt="Mon Mii" loading="lazy" decoding="async" />
             </div>
         </div>
     </section>
