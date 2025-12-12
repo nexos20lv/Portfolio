@@ -35,72 +35,56 @@ Bienvenue sur le dépôt de mon **portfolio personnel** — un site web moderne,
 - **CSS3** : Variables personnalisées, Flexbox/Grid, Animations, Glassmorphism.
 - **JavaScript (ES6+)** : Manipulation du DOM, gestion WebSocket (Lanyard), logique du carrousel.
 - **FontAwesome** : Icônes vectorielles évolutives.
+# Portfolio - Pierre Bouteman
 
-### APIs & Intégrations
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success?style=for-the-badge&logo=github)](https://nexos20lv.github.io/Portfolio/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-- **API Lanyard** : Connexion à Discord pour récupérer les données de présence (En ligne/Hors ligne, Jeux, Spotify).
+Site vitrine personnel développé en **HTML5**, **CSS3** et **Vanilla JS**.
 
----
+## Résumé des changements récents
 
-## 📂 Structure du Projet
+- Améliorations de performance : `loading="lazy"` / `decoding="async"` sur les images décoratives, `preload` du logo.
+- SEO : ajout de `rel="canonical"` et d'un script `application/ld+json` (Person & WebSite).
+- Accessibilité / i18n : menu de langue rendu navigable au clavier (Enter / Espace), menu items focusables.
+
+## Structure rapide
+
+- `index.html` — entrée principale
+- `assets/css/` — styles
+- `assets/js/` — scripts (i18n, carrousel, lanyard, etc.)
+- `assets/lang/` — fichiers de traduction JSON
+
+## Tester localement
+
+1. Cloner le dépôt :
 
 ```bash
-portfolio/
-├── assets/
-│   ├── css/
-│   │   ├── main.css              # Styles principaux et variables
-│   │   ├── responsive.css        # Media queries pour mobile/tablette
-│   │   ├── animations.css        # Animations keyframes
-│   │   ├── background.css        # Effets de fond et blobs
-│   │   ├── modals.css            # Styles des modales de projets
-│   │   ├── social-links.css      # Styles des boutons sociaux
-│   │   ├── loader.css            # Animation de chargement
-│   │   └── carousel-responsive.css # Responsive du carrousel 3D
-│   ├── js/
-│   │   ├── lanyard.js            # Statut Discord & logique WebSocket
-│   │   ├── infiniteCarousel.js   # Carrousel de compétences
-│   │   ├── projects-carousel.js  # Carrousel 3D des projets
-│   │   ├── i18n.js               # Système de traduction
-│   │   ├── easterEggs.js         # Easter eggs cachés
-│   │   ├── loader.js             # Gestion du loader
-│   │   └── ...
-│   ├── lang/                     # Fichiers de traduction JSON
-│   │   ├── en.json
-│   │   ├── fr.json
-│   │   └── ...
-│   └── img/                      # Images, icônes et assets de fond
-├── index.html                    # Point d'entrée principal
-└── service-worker.js             # Service Worker pour le cache
+git clone https://github.com/nexos20lv/Portfolio.git
+cd Portfolio
 ```
 
-## 🔧 Installation & Utilisation
+2. Lancer un serveur HTTP simple (recommandé pour tester Service Worker et chemins relatifs) :
 
-1. **Cloner le dépôt** :
+```bash
+python3 -m http.server 8000
+# puis ouvrir http://localhost:8000
+```
 
-    ```bash
-    git clone https://github.com/votre-username/portfolio.git
-    cd portfolio
-    ```
+#
 
-2. **Lancer localement** :
-    Ouvrez simplement `index.html` dans votre navigateur web préféré. Aucune étape de build ou de serveur n'est requise !
+Le bouton du header utilise l'attribut `download` pour forcer le téléchargement.
 
-    *Optionnel : Utilisez une extension de serveur live (comme Live Server dans VS Code) pour une meilleure expérience de développement.*
+## Suggestions / prochaines actions rapides
 
-## 🎨 Personnalisation
+- Générer des variantes WebP des images principales et utiliser `<picture>` pour servir WebP quand possible.
+- Lancer un audit Lighthouse et appliquer les recommandations (CSS inutilisé, temps de chargement, optimisation LCP).
+- Ajouter meta tags Open Graph détaillés par projet si vous publiez des pages individuelles de projet.
 
-- **Couleurs** : Le thème est contrôlé par des variables CSS dans `assets/css/main.css`. Changez `--accent-color` ou `--text-color` pour changer facilement de thème.
-- **Lanyard** : Mettez à jour `lanyardId` dans `assets/js/lanyard.js` avec votre propre ID utilisateur Discord pour afficher votre statut.
+## Contact
 
----
-
-## 📫 Contact
-
-N'hésitez pas à me contacter !
-
-- **Email** : [pierre.bouteman@icloud.com](mailto:pierre.bouteman@icloud.com)
-- **Discord** : Vérifiez le widget sur le site !
+- Email : pierre.bouteman@icloud.com
 
 ---
 
-> Conçu et développé par **Pierre Bouteman** avec ❤️.
+Conçu et développé par **Pierre Bouteman**.
